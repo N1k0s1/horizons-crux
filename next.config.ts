@@ -7,7 +7,7 @@ const nextConfig = {
     unoptimized: true
   },
   basePath: '/horizons-crux',
-  assetPrefix: '/horizons-crux/public',
+  assetPrefix: '/horizons-crux/public/',
 };
 
 module.exports = nextConfig;
