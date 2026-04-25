@@ -27,7 +27,7 @@ export default function Qualify() {
         <p className="mb-14 text-lg leading-relaxed" style={{ color: "#C1B3F7", maxWidth: "60ch" }}>
           Spend{" "}
           <b style={{ color: "#B9FFFF", fontWeight: 600 }}>{EVENT.hoursRequired} hours</b> building
-          real projects on Hack Club. No GPA, no essays, no résumé. The work is the application.
+          real projects on Hack Club. No GPA, no essays, no résumé. The work is the code.
         </p>
 
         <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-5">

@@ -9,7 +9,7 @@ export const EVENT = {
   ageMin: 13,
   ageMax: 18,
   cost: "$0",
-  hoursRequired: 30,
+  hoursRequired: 35,
   email: "crux@horizons.hackclub.com",
   generalEmail: "horizons@hackclub.com",
   applyUrl: "https://horizons.hackclub.com",
@@ -23,35 +23,35 @@ export const QUALIFY_STEPS = [
     number: "01",
     title: "Join Hack Club",
     description:
-      "Visit hackclub.com and create an account. It's free and open to all high school students.",
-    href: "https://hackclub.com",
+      "Visit horizons.hackclub.com and create an account. It's free and open to all high school students.",
+    href: "https://horizons.hackclub.com",
   },
   {
     number: "02",
     title: "Start Building",
     description:
-      "Create projects and upload them to Hack Club. Anything counts — web, games, hardware, art.",
-    href: null,
+      "Create projects and track time with hackatime. Anything counts — web, games, hardware, art.",
+    href: "https://hackatime.hackclub.com",
   },
   {
     number: "03",
     title: "Track Your Hours",
     description:
-      "Your building time is automatically tracked as you ship projects on Hack Club.",
-    href: null,
+      "Your building time is automatically tracked with hackatime as you ship projects on Horizons.",
+    href: "https://hackatime.hackclub.com",
   },
   {
     number: "04",
-    title: "Hit 30 Hours",
+    title: "Hit 35 Hours",
     description:
-      "Once you accumulate 30 hours of building, you're eligible to apply for Horizons Crux.",
+      "Once you accumulate 35 hours of building, you're eligible to attend Horizons Crux.",
     href: null,
   },
   {
     number: "05",
-    title: "Apply",
+    title: "Attend",
     description:
-      "Submit your application at horizons.hackclub.com/crux before June 30, 2026.",
+      "Purchase a ticket for horizons Crux at horizons.hackclub.com anytime before July 10, 2026.",
     href: "https://horizons.hackclub.com/crux",
   },
 ] as const;
@@ -64,7 +64,7 @@ export const BUILDING_COUNTS = [
 ];
 
 export const COVERED_ITEMS = [
-  { icon: "Plane", label: "Flight Stipends" },
+  { icon: null, label: "Flight Stipends" },
   { icon: "Bed", label: "Accommodation" },
   { icon: "UtensilsCrossed", label: "All Meals" },
   { icon: "Bus", label: "Local Transport" },
