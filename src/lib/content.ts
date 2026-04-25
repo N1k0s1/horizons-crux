@@ -65,11 +65,11 @@ export const BUILDING_COUNTS = [
 
 export const COVERED_ITEMS = [
   { icon: null, label: "Flight Stipends" },
-  { icon: "Bed", label: "Accommodation" },
-  { icon: "UtensilsCrossed", label: "All Meals" },
-  { icon: "Bus", label: "Local Transport" },
-  { icon: "Package", label: "Event Swag" },
-  { icon: "Trophy", label: "Awards" },
+  { icon: null, label: "Accommodation" },
+  { icon: null, label: "All Meals" },
+  { icon: null, label: "Local Transport" },
+  { icon: null, label: "Event Swag" },
+  { icon: null, label: "Awards" },
 ] as const;
 
 export const SCHEDULE_DAYS = [

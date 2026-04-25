@@ -1,11 +1,11 @@
 import Image from "next/image";
 
 const ITEMS = [
-  { emoji: "✈️", label: "Flight stipends", detail: "Coverage scaled to where you're flying from." },
-  { emoji: "🏨", label: "Accommodation", detail: "Sleep at the venue, all 3 nights." },
-  { emoji: "🍽️", label: "All meals & snacks", detail: "Every dietary restriction handled." },
-  { emoji: "🚐", label: "Local transport", detail: "Airport pickups, drop-offs, day trips." },
-  { emoji: "🎁", label: "Event swag", detail: "Limited-run gear and project awards." },
+  { emoji: "", label: "Flight stipends", detail: "Coverage scaled to where you're flying from." },
+  { emoji: "", label: "Accommodation", detail: "Sleep at the venue, all 3 nights." },
+  { emoji: "", label: "All meals & snacks", detail: "Every dietary restriction handled." },
+  { emoji: "", label: "Local transport", detail: "Airport pickups, drop-offs, day trips." },
+  { emoji: "", label: "Event swag", detail: "Limited-run gear and project awards." },
 ];
 
 export default function Covered() {
