@@ -12,7 +12,7 @@ export default function Hero() {
       <div
         className="pointer-events-none absolute inset-0 -z-20"
         style={{
-          backgroundImage: "url(/art/hero-bg.png)",
+          backgroundImage: "/public/art/hero-bg.png)",
           backgroundSize: "cover",
           backgroundPosition: "center 30%",
         }}
