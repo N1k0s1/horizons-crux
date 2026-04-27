@@ -21,7 +21,7 @@ export const EVENT = {
 export const QUALIFY_STEPS = [
   {
     number: "01",
-    title: "Join Hack Club Horizons",
+    title: "Join Hack Club",
     description:
       "Visit horizons.hackclub.com and create an account. It's free and open to all high school students.",
     href: "https://horizons.hackclub.com",
@@ -30,14 +30,14 @@ export const QUALIFY_STEPS = [
     number: "02",
     title: "Start Building",
     description:
-      "Create projects and track time with hackatime. Anything counts — websites, games, hardware, art.",
+      "Create projects and track time with hackatime. Anything counts — web, games, hardware, art.",
     href: "https://hackatime.hackclub.com",
   },
   {
     number: "03",
     title: "Track Your Hours",
     description:
-      "Your building time is automatically tracked with hackatime as you code and ship projects on Horizons.",
+      "Your building time is automatically tracked with hackatime as you ship projects on Horizons.",
     href: "https://hackatime.hackclub.com",
   },
   {
@@ -185,11 +185,11 @@ export const FAQ_ITEMS = [
   },
   {
     q: "Do I need a team?",
-    a: "Nope! You can go by yourself and find people to join forces with. Everyone there has qualified through the exact same way as you.",
+    a: "Nope! You can apply solo. We'll have time during Day 1 for team formation if you'd like to collaborate.",
   },
   {
     q: "How do I contact you?",
-    a: "Email crux@horizons.hackclub.com. We'll help with anything from visa questions to event enquiries.",
+    a: "Email crux@horizons.hackclub.com — we'll help with anything from visa questions to team formation.",
   },
 ] as const;
 
