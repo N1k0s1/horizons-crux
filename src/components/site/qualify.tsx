@@ -3,6 +3,7 @@
 import { useRef, useEffect } from "react";
 import Image from "next/image";
 import { QUALIFY_STEPS, EVENT } from "@/lib/content";
+import { asset } from "@/lib/asset";
 
 const N           = QUALIFY_STEPS.length;     // 5 steps
 const STEP_W      = 320;                      // step block width
@@ -188,7 +189,7 @@ export default function Qualify() {
             style={{ willChange: "transform, opacity" }}
           >
             <Image
-              src="/art/jellyfish-yellow.png"
+              src={asset("/art/jellyfish-yellow.png")}
               alt=""
               width={JW}
               height={JH}

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { EVENT, HACKCLUB } from "@/lib/content";
+import { asset } from "@/lib/asset";
 
 export default function Footer() {
   return (
@@ -12,7 +13,7 @@ export default function Footer() {
     >
       {/* Jellyfish orange deco */}
       <Image
-        src="/art/jellyfish-orange.png"
+        src={asset("/art/jellyfish-orange.png")}
         alt=""
         width={70}
         height={100}
@@ -26,7 +27,7 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <Image
-              src="/art/logo-crux.png"
+              src={asset("/art/logo-crux.png")}
               alt="Horizons Crux"
               width={200}
               height={60}

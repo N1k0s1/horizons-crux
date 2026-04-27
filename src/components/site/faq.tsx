@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { asset } from "@/lib/asset";
 import {
   Accordion,
   AccordionContent,
@@ -18,7 +19,7 @@ export default function FAQ() {
     >
       {/* Jellyfish deco */}
       <Image
-        src="/art/jellyfish-cyan.png"
+        src={asset("/art/jellyfish-cyan.png")}
         alt=""
         width={130}
         height={180}

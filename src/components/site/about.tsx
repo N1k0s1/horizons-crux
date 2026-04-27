@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { asset } from "@/lib/asset";
 
 const STEPS = [
   {
@@ -47,7 +48,7 @@ export default function About() {
         {/* Anchor chain — full-viewport sticky rail on desktop */}
         <div className="pointer-events-none hidden lg:sticky lg:top-0 lg:flex lg:h-screen lg:w-[170px] lg:shrink-0 lg:items-center lg:justify-center">
           <Image
-            src="/art/anchor-chain.png"
+            src={asset("/art/anchor-chain.png")}
             alt=""
             width={549}
             height={1537}

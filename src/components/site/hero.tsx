@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { EVENT } from "@/lib/content";
+import { asset } from "@/lib/asset";
 
 export default function Hero() {
   return (
@@ -12,7 +13,7 @@ export default function Hero() {
       <div
         className="pointer-events-none absolute inset-0 -z-20"
         style={{
-          backgroundImage: "url(/art/hero-bg.png)",
+          backgroundImage: `url(${asset("/art/hero-bg.png")})`,
           backgroundSize: "cover",
           backgroundPosition: "center top",
         }}
@@ -42,7 +43,7 @@ export default function Hero() {
       >
         {/* Logo */}
         <Image
-          src="/art/cruxlogodarker.png"
+          src={asset("/art/cruxlogodarker.png")}
           alt="Horizons Crux"
           width={360}
           height={120}

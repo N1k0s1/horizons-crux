@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { asset } from "@/lib/asset";
 
 const ITEMS = [
   { emoji: "✈️", label: "Flight stipends", detail: "Coverage scaled to where you're flying from." },
@@ -20,7 +21,7 @@ export default function Covered() {
     >
       {/* Jellyfish deco */}
       <Image
-        src="/art/jellyfish-yellow.png"
+        src={asset("/art/jellyfish-yellow.png")}
         alt=""
         width={100}
         height={140}

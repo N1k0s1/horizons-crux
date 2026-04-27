@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { EVENT } from "@/lib/content";
+import { asset } from "@/lib/asset";
 
 const NAV_ITEMS = [
   { id: "about", label: "About" },
@@ -36,7 +37,7 @@ export default function Nav() {
           style={{ textDecoration: "none", borderBottom: "none" }}
         >
           <Image
-            src="/art/logo.png"
+            src={asset("/art/logo.png")}
             alt=""
             width={38}
             height={28}

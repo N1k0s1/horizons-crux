@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { HACKCLUB } from "@/lib/content";
+import { asset } from "@/lib/asset";
 
 const PLACEHOLDER_COUNT = 8;
 
@@ -12,7 +13,7 @@ export default function Sponsors() {
     >
       {/* Shark deco */}
       <Image
-        src="/art/shark.png"
+        src={asset("/art/shark.png")}
         alt=""
         width={280}
         height={200}
