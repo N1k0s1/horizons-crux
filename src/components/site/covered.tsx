@@ -2,11 +2,26 @@ import Image from "next/image";
 import { asset } from "@/lib/asset";
 
 const ITEMS = [
-  { emoji: "✈️", label: "Flight stipends", detail: "Coverage scaled to where you're flying from." },
-  { emoji: "🏨", label: "Accommodation", detail: "Sleep at the venue, all 3 nights." },
-  { emoji: "🍽️", label: "All meals & snacks", detail: "Every dietary restriction handled." },
-  { emoji: "🚐", label: "Local transport", detail: "Airport pickups, drop-offs, day trips." },
-  { emoji: "🎁", label: "Event swag", detail: "Limited-run gear and project awards." },
+  {
+    emoji: "🍽️",
+    label: "All meals & snacks",
+    detail: "Free meals and unlimited snacks for the event!",
+  },
+  {
+    emoji: "✈️",
+    label: "Flight stipends",
+    detail: "At a rate of $8.50USD/hr",
+  },
+  {
+    emoji: "🚐",
+    label: "Local transport",
+    detail: "Airport pickups, drop-offs, day trips.",
+  },
+  {
+    emoji: "🎁",
+    label: "Event swag",
+    detail: "Free Horizons Crux merch!",
+  },
 ];
 
 export default function Covered() {
@@ -15,8 +30,7 @@ export default function Covered() {
       id="covered"
       className="relative overflow-hidden py-[80px] lg:py-[120px]"
       style={{
-        background:
-          "radial-gradient(ellipse at 20% 50%, rgba(255,122,226,0.10) 0%, transparent 50%), #161424",
+        background: "#161424",
       }}
     >
       {/* Jellyfish deco */}
@@ -33,45 +47,39 @@ export default function Covered() {
         }}
       />
 
-      <div className="relative mx-auto max-w-[1180px] px-7" style={{ zIndex: 2 }}>
+      <div
+        className="relative mx-auto max-w-[1180px] px-7"
+        style={{ zIndex: 2 }}
+      >
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-20">
-
           {/* Left — quote */}
           <div>
             <p
               className="mb-[14px] flex items-center gap-[10px] text-[12px] uppercase tracking-[0.22em]"
               style={{ color: "#B9FFFF", fontWeight: 500 }}
             >
-              <span className="inline-block shrink-0" style={{ width: 24, height: 1, background: "#B9FFFF" }} />
+              <span
+                className="inline-block shrink-0"
+                style={{ width: 24, height: 1, background: "#B9FFFF" }}
+              />
               What&apos;s covered
             </p>
             <h2
               className="font-serif mb-6 font-bold leading-[1.05]"
               style={{
-                fontSize: "clamp(40px,5vw,64px)",
+                fontSize: "clamp(40px,5vw,60px)",
                 letterSpacing: "-0.02em",
               }}
             >
-              You bring a{" "}
-              <span
-                style={{
-                  background: "linear-gradient(135deg, #FF7AE2 0%, #B9FFFF 100%)",
-                  WebkitBackgroundClip: "text",
-                  backgroundClip: "text",
-                  color: "transparent",
-                }}
-              >
-                laptop.
-              </span>
+              What's that?
               <br />
-              We handle the rest.
+              Free food, merch, and travel?!
             </h2>
             <p
               className="text-[18px] leading-relaxed"
               style={{ color: "#C1B3F7", maxWidth: "44ch" }}
             >
-              Horizons Crux is fully funded for accepted hackers. No tickets, no fees, no surprise
-              costs. We mean it.
+              Free food and merch, plus, work for flight stipends!
             </p>
           </div>
 
