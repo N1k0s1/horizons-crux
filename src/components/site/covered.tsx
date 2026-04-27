@@ -71,7 +71,7 @@ export default function Covered() {
                 letterSpacing: "-0.02em",
               }}
             >
-              What's that?
+              What&apos;s that?
               <br />
               Free food, merch, and travel?!
             </h2>
