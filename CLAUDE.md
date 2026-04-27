@@ -1,116 +1,96 @@
-# Horizons Crux — Claude Guide
+# CLAUDE.md
 
-## Project Overview
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-**Horizons Crux** is the main website for a 3-day hackathon in Sydney, Australia (July 10–12, 2026), fully funded by Hack Club. The site showcases the event, explains the qualification process (building 35 hours on Hack Club), past editions, schedule, and FAQ.
+## Project Status
 
-**Repo**: https://github.com/D99-1/horizons-crux  
-**Live**: https://horizons.hackclub.com/crux
+This is a **pre-initialized** Next.js landing page project. The repo currently contains only content `.tsx` files and raw image assets — no `package.json`, no Next.js scaffold, and no component library yet. Before any code can run, the project must be initialized.
 
-## Tech Stack
+## Initializing the Project
 
-- **Framework**: Next.js 16 (App Router, TypeScript)
-- **Styling**: Tailwind CSS v4
-- **UI Library**: Base UI + shadcn/ui
-- **Fonts**: Quicksand (serif), Fredoka (sans), JetBrains Mono (mono)
+```bash
+npx create-next-app@latest . --typescript --tailwind --eslint --app --src-dir --import-alias "@/*"
+npx shadcn@latest init
+```
 
-## Key Architecture
+After init, install any additional deps:
+```bash
+npm install
+```
 
-### File Structure
+## Dev Commands (once initialized)
 
+```bash
+npm run dev       # start local dev server at localhost:3000
+npm run build     # production build
+npm run lint      # ESLint
+```
+
+## Architecture
+
+**Stack:** Next.js 14+ (App Router), TypeScript, Tailwind CSS, shadcn/ui.
+
+**Target structure after initialization:**
 ```
 src/
-├── app/
-│   ├── layout.tsx          # Root layout, font imports
-│   ├── globals.css         # Theme vars, keyframes (@theme inline)
-│   └── page.tsx            # Main page (imports all sections)
-├── components/
-│   ├── site/               # Page sections
-│   │   ├── nav.tsx         # Header navigation (sticky)
-│   │   ├── hero.tsx        # Hero section (centered, dark bg)
-│   │   ├── about.tsx       # About/qualification steps
-│   │   ├── past-events.tsx # Horizontal scroll gallery
-│   │   ├── qualify.tsx     # Zigzag path with jellyfish animation
-│   │   ├── covered.tsx     # What's covered (flights, etc.)
-│   │   ├── schedule.tsx    # 3-day schedule
-│   │   ├── sponsors.tsx    # Sponsors section
-│   │   └── faq.tsx         # FAQ accordion
-│   └── ui/                 # shadcn components (accordion, etc.)
-└── lib/
-    └── content.ts          # Event data (PAST_EVENTS, QUALIFY_STEPS, etc.)
+  app/
+    page.tsx          # Single-page lander, composes all sections
+    layout.tsx        # Root layout, fonts, global metadata
+    globals.css       # Tailwind base + shadcn CSS variables (custom dark theme)
+  components/
+    sections/         # One file per landing page section (Hero, About, Qualify, Schedule, etc.)
+    ui/               # shadcn generated components
 ```
 
-## Recent Design Changes (Latest Session)
+**Content source files** (in repo root — reference these for all copy/data, do not recreate content):
+- `home.tsx` — hero copy, event city, dates, CTA link
+- `qualifying.tsx` — 5-step qualifying flow, dates, hours requirement
+- `forParents.tsx` — about the event, safety, cost breakdown, Hack Club info
+- `eventDetails.tsx` — packing list, venue notes, parent policy, schedule expectations
+- `travel.tsx` — flight stipends, arrival/departure, visa info, accommodation
 
-### Dark Theme Overhaul
-- Migrated all backgrounds from `#0A0A53` (deep purple) to `#0D1117` (Deep Navy-Black)
-- Color palette:
-  - **Primary**: `#0D1117` (background)
-  - **Secondary surfaces**: `#161424`, `#1c1a28`
-  - **Accent**: `#FF7AE2` (pink), `#B9FFFF` (cyan)
-- Updated all components + globals.css CSS variables
+**Assets** (`assets/` folder):
+| File | Usage |
+|------|-------|
+| `image (2).png` | Horizons Crux logo |
+| `hero_img.PNG` | Hero section background/art |
+| `body_bg.PNG` | Body/section background texture |
+| `jellyfish[1-3,5].png` | Decorative art, scatter across sections |
+| `shark.png` | Decorative art |
+| `anchor&chain.PNG` | Side decoration (e.g., alongside Qualify section) |
+| `IMG_2774.PNG` | Additional art/decoration |
+| `Image_from_iOS-removebg-preview.png` | Removed-background art asset |
+| `design_reference.PNG` | Visual design reference |
 
-### Hero Section
-- Centered content vertically/horizontally
-- Switched logo to `cruxlogodarker.png`
-- Centered CTA button with centered text
+## Design System
 
-### Past Events Section
-- Complete redesign to **horizontal scroll** with sticky viewport
-- Cards (Campfire, Daydream, Midnight, Stasis, Scrapyard) scroll horizontally as you scroll vertically
-- Section height = `100vh + track_width` to map scroll progress to horizontal movement
-- Jellyfish yellow bob animation on cards
+- **Mode:** Dark only — no light mode toggle.
+- **Feel:** Editorial. Use shadcn's CSS variable theming (`--background`, `--foreground`, `--muted`, etc.) in `globals.css`. Avoid raw Tailwind color utilities like `bg-gray-900`; prefer `bg-background`, `text-foreground`, `text-muted-foreground`.
+- **Typography:** Serif for large headings (editorial feel), sans for body. Configure via `next/font` in `layout.tsx`.
+- **Animations:** Keep minimal — no heavy scroll or entrance animations. Simple CSS transitions only.
+- **Mobile:** Full responsive support required. Design mobile-first.
 
-### Qualify Section
-- **Complete revamp** to fixed-pixel zigzag layout
-- 5 steps alternate left/right with `880px` track width, `280px` row height
-- **4 disconnected straight-line SVG `<line>` elements** connecting consecutive step nodes
-- Pink circular node markers where lines terminate (so lines never overlap text)
-- **rAF-smoothed jellyfish animation** using lerp: `current += (target - current) * SMOOTH`
-- Opacity fades at segment boundaries (fade transition effect)
-- ~1700px total section height for calm scroll pace (~200px per segment)
+## Page Sections (in order)
 
-## Important Patterns & Quirks
+1. **Navbar** — Logo + anchor links to sections
+2. **Hero** — Full-bleed, logo, headline ("charge your own horizon"), subtitle, date/location/cost pill, CTA button → `https://horizons.hackclub.com`
+3. **About** — What is Horizons Crux, sourced from `forParents.tsx`
+4. **Previous Hackathons** — Cards for [Campfire](https://campfire.hackclub.com) and [Daydream](https://daydream.hackclub.com) with image placeholders
+5. **How to Qualify** — 5-step flow from `qualifying.tsx` (Join Hack Club → Build → Track Hours → Hit 30hrs → Apply)
+6. **Schedule** — Simple 3-day list (Day 1: Check-in & Opening, Day 2: Hacking, Day 3: Demos & Awards)
+7. **We Handle Everything** — "You bring a laptop, we cover the rest": meals, accommodation, flight stipends, transport, swag, awards
+8. **Sponsors** — Placeholder logos + "Hack Club is a 501(c)(3) nonprofit" note + CTA to become a sponsor (blank link)
+9. **FAQ** — Accordion/dropdown, sourced from content files
+10. **Footer** — Links, contact email (`crux@horizons.hackclub.com`), Hack Club attribution
 
-### Color System
-- All hardcoded colors updated to new dark palette (search for `#0A0A53`, `#06062E`, etc. to find outdated ones)
-- CSS variables in `:root` and `.dark` scopes (`--background`, `--crux-*`, etc.)
-- Shadcn tokens aliased to Crux palette in globals.css `@theme inline`
+## Key Event Facts
 
-### Past Events (Horizontal Scroll)
-```tsx
-// Outer div height = 100vh + horizontal_scrollable_width
-// Sticky inner div stays at top:0 while page scrolls through outer height
-// rAF scroll listener updates track's translateX
-```
-- **Gotcha**: `getBoundingClientRect()` on track after scroll to get current dimensions (used to calculate section height)
-
-### Qualify (Zigzag)
-```tsx
-const STEP_W = 320, STEP_H = 170, ROW_H = 280, TRACK_W = 880;
-function stepBox(i) { /* x,y coords */ }
-function stepNode(i) { /* node center position */ }
-```
-- Fixed-pixel layout (desktop-only, lg:block breakpoint)
-- All position math is deterministic from constants → no DOM measurement guessing
-- rAF runs every frame, updating jellyfish target and smoothing toward it
-- Node circle SVG (3 nested circles: glow, bg-fill ring, pink dot) makes line termination clean
-
-### Base UI + shadcn Quirks
-- Base UI **Accordion** component used in FAQ (no `asChild` prop; different API than Radix)
-- Make sure to import from `@/components/ui/accordion`
-- All shadcn components already installed (check next.config if issues)
-
-## Development Notes
-
-- **Scroll animations**: Use `getBoundingClientRect()` for viewport-relative coords, avoid `offsetTop` (can be relative to various ancestors)
-- **GPU acceleration**: Use `transform` and `opacity` for animated props; avoid `left`/`top`
-- **Smooth easing**: CSS `transition` works, but rAF + lerp gives more control for scroll-driven animations
-- **Content data**: All event info lives in `src/lib/content.ts` (single source of truth)
-
-## Next Steps / Known TODOs
-
-- [ ] Test responsive behavior on mobile for past-events scroll section
-- [ ] Verify all image paths work in production deploy
-- [ ] Consider accessibility improvements for animation sections (prefers-reduced-motion)
-
+- **Event:** Horizons Crux (Horizons Oceania 2026)
+- **Dates:** July 10–12, 2026, Sydney, Australia
+- **Ages:** 13–18
+- **Cost:** $0 (fully covered: flights, meals, accommodation, transport, swag)
+- **Qualifier:** 30 hours of projects on Hack Club
+- **Application deadline:** June 30, 2026
+- **Contact:** crux@horizons.hackclub.com
+- **Apply link:** https://horizons.hackclub.com
+- **Hack Club EIN:** 81-2908499 (501c3 nonprofit)

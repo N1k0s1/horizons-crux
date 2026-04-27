@@ -23,8 +23,8 @@ export default function Nav() {
 
   return (
     <header
-      className="relative z-50 border-b border-[rgba(193,178,247,0.12)]"
-      style={{ background: "rgba(19,17,28,0.75)", backdropFilter: "blur(16px) saturate(140%)", WebkitBackdropFilter: "blur(16px) saturate(140%)" }}
+      className="fixed inset-x-0 top-0 z-50 border-b border-[rgba(193,178,247,0.12)]"
+      style={{ background: "rgba(6,6,46,0.55)", backdropFilter: "blur(16px) saturate(140%)", WebkitBackdropFilter: "blur(16px) saturate(140%)" }}
     >
       <div className="relative mx-auto flex max-w-[1280px] items-center gap-6 px-7 py-[14px]">
 
@@ -73,7 +73,7 @@ export default function Nav() {
           className="hidden shrink-0 items-center justify-center rounded-full px-[18px] py-[9px] text-sm font-semibold transition-transform hover:-translate-y-0.5 md:inline-flex"
           style={{
             background: "#FF7AE2",
-            color: "#0D1117",
+            color: "#0A0A53",
             textDecoration: "none",
             borderBottom: "none",
             boxShadow: "0 6px 20px rgba(255,122,226,0.25)",
@@ -105,7 +105,7 @@ export default function Nav() {
       {open && (
         <div
           className="absolute inset-x-0 border-b border-[rgba(193,178,247,0.12)] px-5 pb-5 pt-3 md:hidden"
-          style={{ background: "rgba(19,17,28,0.96)", backdropFilter: "blur(16px)" }}
+          style={{ background: "rgba(6,6,46,0.96)", backdropFilter: "blur(16px)" }}
         >
           <ul className="m-0 flex list-none flex-col gap-1 p-0">
             {NAV_ITEMS.map(({ id, label }) => (

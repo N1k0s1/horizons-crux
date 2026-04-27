@@ -1,106 +1,67 @@
-"use client";
-
-import { useRef, useEffect } from "react";
 import { PAST_EVENTS } from "@/lib/content";
 
-const CARD_STYLES: Record<string, { bg: string }> = {
-  Campfire:  { bg: "linear-gradient(135deg, #FF7AE2 0%, #FFB37A 60%, #FFE07A 100%)" },
-  Daydream:  { bg: "linear-gradient(135deg, #64B8FE 0%, #5258E4 50%, #6A33DA 100%)" },
-  Midnight:  { bg: "linear-gradient(135deg, #0D0D2B 0%, #1B1050 40%, #2B0F60 100%)" },
-  Stasis:    { bg: "linear-gradient(135deg, #00D2FF 0%, #0077B6 50%, #023E8A 100%)" },
-  Scrapyard: { bg: "linear-gradient(135deg, #F77F00 0%, #D62828 50%, #4A1942 100%)" },
+const CARD_STYLES: Record<string, { bg: string; gradient: string }> = {
+  Campfire: {
+    bg: "linear-gradient(135deg, #FF7AE2 0%, #FFB37A 60%, #FFE07A 100%)",
+    gradient: "",
+  },
+  Daydream: {
+    bg: "linear-gradient(135deg, #64B8FE 0%, #5258E4 50%, #6A33DA 100%)",
+    gradient: "",
+  },
 };
 
 export default function PastEvents() {
-  const outerRef = useRef<HTMLDivElement>(null);
-  const trackRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const outer = outerRef.current;
-    const track = trackRef.current;
-    if (!outer || !track) return;
-
-    const updateHeight = () => {
-      const scrollable = track.scrollWidth - window.innerWidth;
-      outer.style.height = `calc(100vh + ${Math.max(0, scrollable)}px)`;
-    };
-
-    const onScroll = () => {
-      if (!outer || !track) return;
-      const scrolled = Math.max(0, -outer.getBoundingClientRect().top);
-      const scrollable = track.scrollWidth - window.innerWidth;
-      track.style.transform = `translateX(-${Math.min(scrolled, scrollable)}px)`;
-    };
-
-    updateHeight();
-    window.addEventListener("resize", updateHeight, { passive: true });
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => {
-      window.removeEventListener("resize", updateHeight);
-      window.removeEventListener("scroll", onScroll);
-    };
-  }, []);
-
   return (
-    <div ref={outerRef} id="past">
-      <div
-        className="sticky top-0 overflow-hidden"
-        style={{ height: "100vh", background: "#0D1117" }}
-      >
-        {/* Header */}
-        <div className="px-7 pt-16 pb-8 lg:px-14 lg:pt-20">
-          <p
-            className="mb-[14px] flex items-center gap-[10px] text-[12px] uppercase tracking-[0.22em]"
-            style={{ color: "#B9FFFF", fontWeight: 500 }}
-          >
-            <span className="inline-block shrink-0" style={{ width: 24, height: 1, background: "#B9FFFF" }} />
-            Previous editions
-          </p>
-          <h2
-            className="font-serif text-4xl font-bold leading-[1.05] tracking-[-0.015em] lg:text-[clamp(34px,4.4vw,56px)]"
-            style={{ maxWidth: "22ch" }}
-          >
-            We&apos;ve done this before.
-          </h2>
-        </div>
-
-        {/* Cards track */}
-        <div
-          ref={trackRef}
-          className="flex"
-          style={{
-            gap: 20,
-            paddingLeft: 56,
-            paddingRight: 56,
-            height: "calc(100vh - 196px)",
-            willChange: "transform",
-          }}
+    <section
+      id="past"
+      className="py-[80px] lg:py-[120px]"
+      style={{ background: "#06062E" }}
+    >
+      <div className="mx-auto max-w-[1180px] px-7">
+        <p
+          className="mb-[14px] flex items-center gap-[10px] text-[12px] uppercase tracking-[0.22em]"
+          style={{ color: "#B9FFFF", fontWeight: 500 }}
         >
+          <span className="inline-block shrink-0" style={{ width: 24, height: 1, background: "#B9FFFF" }} />
+          Previous editions
+        </p>
+        <h2
+          className="font-serif mb-5 text-4xl font-bold leading-[1.05] tracking-[-0.015em] lg:text-[clamp(34px,4.4vw,56px)]"
+          style={{ maxWidth: "22ch" }}
+        >
+          We&apos;ve done this before.
+        </h2>
+        <p className="mb-14 text-lg leading-relaxed" style={{ color: "#C1B3F7", maxWidth: "60ch" }}>
+          Crux is the third Hack Club Horizons event. The first two brought together hundreds of
+          teen builders from around the world.
+        </p>
+
+        <div className="grid gap-7 lg:grid-cols-2">
           {PAST_EVENTS.map((event) => {
-            const cardStyle = CARD_STYLES[event.name] ?? CARD_STYLES.Campfire;
+            const style = CARD_STYLES[event.name] ?? CARD_STYLES.Campfire;
             return (
               <a
                 key={event.name}
                 href={event.href}
                 target="_blank"
                 rel="noreferrer"
-                className="group flex shrink-0 flex-col overflow-hidden rounded-[20px] border border-[rgba(193,178,247,0.18)] transition-all hover:-translate-y-1 hover:border-[#FF7AE2] hover:shadow-[0_30px_60px_-20px_rgba(255,122,226,0.25)]"
+                className="group relative flex flex-col overflow-hidden rounded-[20px] border border-[rgba(193,178,247,0.18)] transition-all hover:-translate-y-1 hover:border-[#FF7AE2] hover:shadow-[0_30px_60px_-20px_rgba(255,122,226,0.25)]"
                 style={{
-                  width: "clamp(320px, 38vw, 500px)",
-                  background: "#1c1a28",
+                  background: "#1E1E5C",
                   textDecoration: "none",
                   color: "inherit",
                 }}
               >
-                {/* Gradient header */}
+                {/* Image area */}
                 <div
-                  className="relative flex flex-1 items-center justify-center overflow-hidden"
-                  style={{ background: cardStyle.bg }}
+                  className="relative flex aspect-[16/10] items-center justify-center overflow-hidden"
+                  style={{ background: style.bg }}
                 >
                   <span
                     className="font-serif relative z-10 font-bold italic"
                     style={{
-                      fontSize: "clamp(40px, 5vw, 64px)",
+                      fontSize: 64,
                       color: "rgba(255,255,255,0.92)",
                       letterSpacing: "-0.03em",
                       textShadow: "0 4px 30px rgba(0,0,0,0.3)",
@@ -118,21 +79,24 @@ export default function PastEvents() {
                 </div>
 
                 {/* Body */}
-                <div className="flex flex-col justify-between p-7" style={{ flexShrink: 0 }}>
+                <div className="p-7">
                   <p
                     className="mb-[10px] font-mono text-[11px] uppercase tracking-[0.18em]"
                     style={{ color: "#B9FFFF" }}
                   >
                     {event.tagline}
                   </p>
-                  <p
-                    className="mb-[18px] text-[15px] leading-relaxed"
-                    style={{ color: "#C1B3F7" }}
+                  <h3
+                    className="font-serif mb-[10px] text-[28px] font-bold"
+                    style={{ letterSpacing: "-0.01em" }}
                   >
+                    {event.name}
+                  </h3>
+                  <p className="mb-[18px] text-[15px] leading-relaxed" style={{ color: "#C1B3F7" }}>
                     {event.blurb}
                   </p>
                   <span
-                    className="inline-flex items-center gap-1.5 text-sm font-semibold"
+                    className="inline-flex items-center gap-1.5 text-sm font-semibold transition-transform"
                     style={{ color: "#FF7AE2" }}
                   >
                     {event.href.replace("https://", "")}
@@ -144,6 +108,6 @@ export default function PastEvents() {
           })}
         </div>
       </div>
-    </div>
+    </section>
   );
 }

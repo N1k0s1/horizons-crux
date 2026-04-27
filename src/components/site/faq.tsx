@@ -14,7 +14,7 @@ export default function FAQ() {
     <section
       id="faq"
       className="relative overflow-hidden py-[80px] lg:py-[120px]"
-      style={{ background: "#0D1117" }}
+      style={{ background: "#0A0A53" }}
     >
       {/* Jellyfish deco */}
       <Image
@@ -84,7 +84,7 @@ export default function FAQ() {
                 className="pb-7 text-base leading-relaxed"
                 style={{ color: "#C1B3F7", paddingLeft: 4, paddingRight: 4 }}
               >
-                {item.a}
+                <span dangerouslySetInnerHTML={{ __html: item.a }} />
               </AccordionContent>
             </AccordionItem>
           ))}

@@ -8,7 +8,7 @@ export default function Sponsors() {
     <section
       id="sponsors"
       className="relative overflow-hidden py-[80px] lg:py-[120px]"
-      style={{ background: "#0D1117" }}
+      style={{ background: "#06062E" }}
     >
       {/* Shark deco */}
       <Image
@@ -95,7 +95,7 @@ export default function Sponsors() {
             className="self-start whitespace-nowrap rounded-full px-6 py-3 text-[15px] font-semibold transition-transform hover:-translate-y-0.5"
             style={{
               background: "#FF7AE2",
-              color: "#0D1117",
+              color: "#0A0A53",
               textDecoration: "none",
               borderBottom: "none",
               boxShadow: "0 6px 20px rgba(255,122,226,0.25)",

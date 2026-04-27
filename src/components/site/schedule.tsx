@@ -36,7 +36,7 @@ export default function Schedule() {
     <section
       id="schedule"
       className="py-[80px] lg:py-[120px]"
-      style={{ background: "#0D1117" }}
+      style={{ background: "#0A0A53" }}
     >
       <div className="mx-auto max-w-[1180px] px-7">
         <p
@@ -64,7 +64,7 @@ export default function Schedule() {
             <div
               key={day.label}
               className="grid grid-cols-1 gap-4 py-8 lg:grid-cols-[200px_1fr] lg:gap-10"
-              style={{ background: "#0D1117", borderTop: i > 0 ? "1px solid rgba(193,178,247,0.18)" : undefined }}
+              style={{ background: "#0A0A53", borderTop: i > 0 ? "1px solid rgba(193,178,247,0.18)" : undefined }}
             >
               {/* Day label */}
               <div>

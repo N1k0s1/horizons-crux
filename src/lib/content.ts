@@ -21,7 +21,7 @@ export const EVENT = {
 export const QUALIFY_STEPS = [
   {
     number: "01",
-    title: "Join Hack Club",
+    title: "Join Hack Club Horizons",
     description:
       "Visit horizons.hackclub.com and create an account. It's free and open to all high school students.",
     href: "https://horizons.hackclub.com",
@@ -30,14 +30,14 @@ export const QUALIFY_STEPS = [
     number: "02",
     title: "Start Building",
     description:
-      "Create projects and track time with hackatime. Anything counts — web, games, hardware, art.",
+      "Create projects and track time with hackatime. Anything counts — websites, games, hardware, art.",
     href: "https://hackatime.hackclub.com",
   },
   {
     number: "03",
     title: "Track Your Hours",
     description:
-      "Your building time is automatically tracked with hackatime as you ship projects on Horizons.",
+      "Your building time is automatically tracked with hackatime as you code and ship projects on Horizons.",
     href: "https://hackatime.hackclub.com",
   },
   {
@@ -115,38 +115,19 @@ export const PACK_LIST = [
 export const PAST_EVENTS = [
   {
     name: "Campfire",
-    tagline: "Vermont · Summer 2024",
+    tagline: "A summer of building, together.",
     blurb:
       "Hack Club's sprawling in-person hackathon — hundreds of high schoolers gathering to build projects, make friends, and ship things they're proud of.",
     href: "https://campfire.hackclub.com",
+    image: null,
   },
   {
     name: "Daydream",
-    tagline: "San Francisco · Fall 2024",
+    tagline: "Dream it. Build it. Ship it.",
     blurb:
       "Daydream brought together the next generation of builders for a weekend of wild ideas, late nights, and projects nobody expected to ship.",
     href: "https://daydream.hackclub.com",
-  },
-  {
-    name: "Midnight",
-    tagline: "Vienna · January 2026",
-    blurb:
-      "A murder-mystery hackathon in Vienna, Austria. Spend 50 hours building personal projects, then fly out to solve the case — and ship something unforgettable.",
-    href: "https://midnight.hackclub.com",
-  },
-  {
-    name: "Stasis",
-    tagline: "Austin · 2025",
-    blurb:
-      "A hardware hackathon for high school builders. Solder, prototype, and ship real physical things under one roof with mentors who've shipped hardware for real.",
-    href: "https://stasis.hackclub.com",
-  },
-  {
-    name: "Scrapyard",
-    tagline: "Global · March 2025",
-    blurb:
-      "Build stupid stuff, get stupid prizes. A scrappy global hackathon run by high schoolers in 100+ cities at once — celebrating weird inventions and chaotic creativity.",
-    href: "https://scrapyard.hackclub.com",
+    image: null,
   },
 ] as const;
 
@@ -185,11 +166,11 @@ export const FAQ_ITEMS = [
   },
   {
     q: "Do I need a team?",
-    a: "Nope! You can apply solo. We'll have time during Day 1 for team formation if you'd like to collaborate.",
+    a: "Nope! You can go by yourself and find people to join forces with. Everyone there has qualified through the exact same way as you.",
   },
   {
     q: "How do I contact you?",
-    a: "Email crux@horizons.hackclub.com — we'll help with anything from visa questions to team formation.",
+    a: "Email crux@horizons.hackclub.com. We'll help with anything from visa questions to event enquiries.",
   },
 ] as const;
 

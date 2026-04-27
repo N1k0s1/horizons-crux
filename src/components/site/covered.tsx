@@ -15,7 +15,7 @@ export default function Covered() {
       className="relative overflow-hidden py-[80px] lg:py-[120px]"
       style={{
         background:
-          "radial-gradient(ellipse at 20% 50%, rgba(255,122,226,0.10) 0%, transparent 50%), #161424",
+          "radial-gradient(ellipse at 20% 50%, rgba(255,122,226,0.10) 0%, transparent 50%), #1B1668",
       }}
     >
       {/* Jellyfish deco */}
@@ -82,7 +82,7 @@ export default function Covered() {
                 className="grid items-center gap-[18px] rounded-[20px] px-[22px] py-[18px]"
                 style={{
                   gridTemplateColumns: "36px 1fr",
-                  background: "rgba(13, 17, 23, 0.7)",
+                  background: "rgba(10, 10, 83, 0.6)",
                   border: "1px solid rgba(193,178,247,0.18)",
                 }}
               >

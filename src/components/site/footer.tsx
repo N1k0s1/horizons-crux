@@ -6,7 +6,7 @@ export default function Footer() {
     <footer
       className="relative overflow-hidden pb-8 pt-20"
       style={{
-        background: "#0D1117",
+        background: "#06062E",
         borderTop: "1px solid rgba(193,178,247,0.18)",
       }}
     >
