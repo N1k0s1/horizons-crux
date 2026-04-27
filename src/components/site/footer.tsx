@@ -12,7 +12,7 @@ export default function Footer() {
     >
       {/* Jellyfish orange deco */}
       <Image
-        src="/horizons-crux/art/jellyfish-orange.png"
+        src="/art/jellyfish-orange.png"
         alt=""
         width={70}
         height={100}
@@ -26,7 +26,7 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <Image
-              src="/horizons-crux/art/logo-crux.png"
+              src="/art/logo-crux.png"
               alt="Horizons Crux"
               width={200}
               height={60}

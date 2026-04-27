@@ -2,21 +2,19 @@ import Image from "next/image";
 import { EVENT } from "@/lib/content";
 
 export default function Hero() {
-  const basePath = "/horizons-crux";
-
   return (
     <section
       id="top"
-      className="relative min-h-screen overflow-hidden pt-[100px] lg:pt-[120px]"
+      className="relative min-h-screen overflow-hidden"
       style={{ isolation: "isolate" }}
     >
       {/* Background image */}
       <div
         className="pointer-events-none absolute inset-0 -z-20"
         style={{
-          backgroundImage: `url("${basePath}/art/hero-bg.png")`,
+          backgroundImage: "url(/art/hero-bg.png)",
           backgroundSize: "cover",
-          backgroundPosition: "center 30%",
+          backgroundPosition: "center top",
         }}
       />
 
@@ -24,7 +22,7 @@ export default function Hero() {
       <div
         className="pointer-events-none absolute inset-0 -z-10"
         style={{
-          background: "radial-gradient(ellipse at 25% 30%, rgba(6,6,46,0.55) 0%, rgba(6,6,46,0) 55%)",
+          background: "radial-gradient(ellipse at 50% 30%, rgba(13,17,23,0.55) 0%, rgba(13,17,23,0) 55%)",
         }}
       />
 
@@ -33,18 +31,18 @@ export default function Hero() {
         className="pointer-events-none absolute bottom-0 left-0 right-0 -z-10"
         style={{
           height: "40%",
-          background: "linear-gradient(180deg, rgba(10,10,83,0) 0%, rgba(10,10,83,0.35) 60%, #0A0A53 100%)",
+          background: "linear-gradient(180deg, rgba(13,17,23,0) 0%, rgba(13,17,23,0.35) 60%, #0D1117 100%)",
         }}
       />
 
       {/* Content */}
       <div
-        className="relative mx-auto flex min-h-[calc(100vh-100px)] flex-col items-start justify-start px-6 pb-16 pt-5 lg:min-h-[calc(100vh-120px)] lg:px-7 lg:pb-20 lg:pt-10"
+        className="relative mx-auto flex min-h-screen flex-col items-center justify-center px-6 pb-16 pt-16 text-center lg:px-12 lg:pb-20 lg:pt-30"
         style={{ maxWidth: 1280 }}
       >
         {/* Logo */}
         <Image
-          src="/horizons-crux/art/logo-crux.png"
+          src="/art/cruxlogodarker.png"
           alt="Horizons Crux"
           width={360}
           height={120}
@@ -70,10 +68,10 @@ export default function Hero() {
           href={EVENT.applyUrl}
           target="_blank"
           rel="noreferrer"
-          className="self-start shrink-0 rounded-full px-6 py-3 text-[15px] font-semibold transition-transform hover:-translate-y-0.5 active:scale-[0.98]"
+          className="shrink-0 rounded-full px-6 py-3 text-[15px] font-semibold transition-transform hover:-translate-y-0.5 active:scale-[0.98]"
           style={{
             background: "#FF7AE2",
-            color: "#0A0A53",
+            color: "#0D1117",
             textDecoration: "none",
             borderBottom: "none",
             boxShadow: "0 6px 20px rgba(255,122,226,0.25)",

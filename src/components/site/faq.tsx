@@ -18,7 +18,7 @@ export default function FAQ() {
     >
       {/* Jellyfish deco */}
       <Image
-        src="/horizons-crux/art/jellyfish-cyan.png"
+        src="/art/jellyfish-cyan.png"
         alt=""
         width={130}
         height={180}
@@ -84,7 +84,7 @@ export default function FAQ() {
                 className="pb-7 text-base leading-relaxed"
                 style={{ color: "#C1B3F7", paddingLeft: 4, paddingRight: 4 }}
               >
-                <span dangerouslySetInnerHTML={{ __html: item.a }} />
+                {item.a}
               </AccordionContent>
             </AccordionItem>
           ))}

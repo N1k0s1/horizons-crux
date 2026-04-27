@@ -1,11 +1,11 @@
 import Image from "next/image";
 
 const ITEMS = [
-  { emoji: "", label: "Flight stipends", detail: "Get $8.5USD per hour you spend coding after qualifying." },
-  { emoji: "", label: "Accommodation", detail: "Sleep at the venue, all 2 nights." },
-  { emoji: "", label: "All meals & snacks", detail: "Every dietary restriction handled." },
-  { emoji: "", label: "Local transport", detail: "Public transport plans" },
-  { emoji: "", label: "Event swag", detail: "Exclusive Merch and project prizes." },
+  { emoji: "✈️", label: "Flight stipends", detail: "Coverage scaled to where you're flying from." },
+  { emoji: "🏨", label: "Accommodation", detail: "Sleep at the venue, all 3 nights." },
+  { emoji: "🍽️", label: "All meals & snacks", detail: "Every dietary restriction handled." },
+  { emoji: "🚐", label: "Local transport", detail: "Airport pickups, drop-offs, day trips." },
+  { emoji: "🎁", label: "Event swag", detail: "Limited-run gear and project awards." },
 ];
 
 export default function Covered() {
@@ -20,7 +20,7 @@ export default function Covered() {
     >
       {/* Jellyfish deco */}
       <Image
-        src="/horizons-crux/art/jellyfish-yellow.png"
+        src="/art/jellyfish-yellow.png"
         alt=""
         width={100}
         height={140}
@@ -69,7 +69,7 @@ export default function Covered() {
               className="text-[18px] leading-relaxed"
               style={{ color: "#C1B3F7", maxWidth: "44ch" }}
             >
-              Horizons Crux is fully funded for all hackers. No tickets, no fees, no surprise
+              Horizons Crux is fully funded for accepted hackers. No tickets, no fees, no surprise
               costs. We mean it.
             </p>
           </div>

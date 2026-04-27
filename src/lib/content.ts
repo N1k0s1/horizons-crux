@@ -9,7 +9,7 @@ export const EVENT = {
   ageMin: 13,
   ageMax: 18,
   cost: "$0",
-  hoursRequired: 35,
+  hoursRequired: 30,
   email: "crux@horizons.hackclub.com",
   generalEmail: "horizons@hackclub.com",
   applyUrl: "https://horizons.hackclub.com",
@@ -21,37 +21,37 @@ export const EVENT = {
 export const QUALIFY_STEPS = [
   {
     number: "01",
-    title: "Join Hack Club Horizons",
+    title: "Join Hack Club",
     description:
-      "Visit horizons.hackclub.com and create an account. It's free and open to all high school students.",
-    href: "https://horizons.hackclub.com",
+      "Visit hackclub.com and create an account. It's free and open to all high school students.",
+    href: "https://hackclub.com",
   },
   {
     number: "02",
     title: "Start Building",
     description:
-      "Create projects and track time with hackatime. Anything counts — websites, games, hardware, art.",
-    href: "https://hackatime.hackclub.com",
+      "Create projects and upload them to Hack Club. Anything counts — web, games, hardware, art.",
+    href: null,
   },
   {
     number: "03",
     title: "Track Your Hours",
     description:
-      "Your building time is automatically tracked with hackatime as you code and ship projects on Horizons.",
-    href: "https://hackatime.hackclub.com",
+      "Your building time is automatically tracked as you ship projects on Hack Club.",
+    href: null,
   },
   {
     number: "04",
-    title: "Hit 35 Hours",
+    title: "Hit 30 Hours",
     description:
-      "Once you accumulate 35 hours of building, you're eligible to attend Horizons Crux.",
+      "Once you accumulate 30 hours of building, you're eligible to apply for Horizons Crux.",
     href: null,
   },
   {
     number: "05",
-    title: "Attend",
+    title: "Apply",
     description:
-      "Purchase a ticket for horizons Crux at horizons.hackclub.com anytime before July 10, 2026.",
+      "Submit your application at horizons.hackclub.com/crux before June 30, 2026.",
     href: "https://horizons.hackclub.com/crux",
   },
 ] as const;
@@ -64,12 +64,12 @@ export const BUILDING_COUNTS = [
 ];
 
 export const COVERED_ITEMS = [
-  { icon: null, label: "Flight Stipends" },
-  { icon: null, label: "Accommodation" },
-  { icon: null, label: "All Meals" },
-  { icon: null, label: "Local Transport" },
-  { icon: null, label: "Event Swag" },
-  { icon: null, label: "Awards" },
+  { icon: "Plane", label: "Flight Stipends" },
+  { icon: "Bed", label: "Accommodation" },
+  { icon: "UtensilsCrossed", label: "All Meals" },
+  { icon: "Bus", label: "Local Transport" },
+  { icon: "Package", label: "Event Swag" },
+  { icon: "Trophy", label: "Awards" },
 ] as const;
 
 export const SCHEDULE_DAYS = [
@@ -153,15 +153,15 @@ export const PAST_EVENTS = [
 export const FAQ_ITEMS = [
   {
     q: "How much does it cost?",
-    a: "Nothing. Horizons Crux is completely free to attend. We cover flights, accommodation, and all meals.",
+    a: "Nothing. Horizons Crux is completely free to attend. We cover flights, accommodation, all meals, and local transport.",
   },
   {
     q: "Who can attend?",
-    a: "High school students aged 13–18. You don't need to be from Australia, international attendees are welcome and we provide flight stipends.",
+    a: "High school students aged 13–18. You don't need to be from Australia — international attendees are welcome and we provide flight stipends.",
   },
   {
     q: "How do I qualify?",
-    a: "Spend 35 hours building projects on Hack Club before July 10th, 2026, then submit your application at horizons.hackclub.com/crux. Your hours are tracked automatically.",
+    a: "Spend 30 hours building projects on Hack Club before June 30, 2026, then submit your application at horizons.hackclub.com/crux. Your hours are tracked automatically.",
   },
   {
     q: "Where do I sleep?",
@@ -173,11 +173,11 @@ export const FAQ_ITEMS = [
   },
   {
     q: "How do flight stipends work?",
-    a: "We provide stipends to help cover your travel costs. The exact amount we give is $8.5USD per hour you spend coding after qualifying, up to the cost of your flight, visa and other transport costs.",
+    a: "We provide stipends to help cover your travel costs. The exact amount depends on your location. We're committed to making attendance affordable for everyone.",
   },
   {
     q: "Do I need a visa to travel to Australia?",
-    a: "It depends on your nationality. Check the <a href='https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-finder/visit'>Australian Department of Home Affairs</a> website for requirements and apply early, processing can take time. Contact us if you need help.",
+    a: "It depends on your nationality. Check the Australian Department of Home Affairs website for requirements and apply early — processing can take time. Contact us if you need help.",
   },
   {
     q: "Can my parents come?",
@@ -185,11 +185,11 @@ export const FAQ_ITEMS = [
   },
   {
     q: "Do I need a team?",
-    a: "Nope! You can go by yourself and find people to join forces with. Everyone there has qualified through the exact same way as you.",
+    a: "Nope! You can apply solo. We'll have time during Day 1 for team formation if you'd like to collaborate.",
   },
   {
     q: "How do I contact you?",
-    a: "Email crux@horizons.hackclub.com. We'll help with anything from visa questions to event enquiries.",
+    a: "Email crux@horizons.hackclub.com — we'll help with anything from visa questions to team formation.",
   },
 ] as const;
 
