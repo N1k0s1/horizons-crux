@@ -51,21 +51,6 @@ export default function Sponsors() {
           </p>
         </div>
 
-        {/* Sponsor grid */}
-        <div className="mb-16 grid grid-cols-2 gap-5 sm:grid-cols-4">
-          {Array.from({ length: PLACEHOLDER_COUNT }).map((_, i) => (
-            <div
-              key={i}
-              className="flex h-[120px] items-center justify-center rounded-[12px] border border-[rgba(193,178,247,0.18)] font-serif text-lg font-semibold text-[#C1B3F7] transition-colors hover:border-[#FF7AE2] hover:text-[#FF7AE2]"
-              style={{
-                background: "rgba(255,255,255,0.03)",
-              }}
-            >
-              Sponsor logo
-            </div>
-          ))}
-        </div>
-
         {/* Sponsor CTA */}
         <div
           className="grid items-center gap-8 rounded-[20px] px-[48px] py-[44px] lg:grid-cols-[1.4fr_auto]"
@@ -92,7 +77,7 @@ export default function Sponsors() {
             </p>
           </div>
           <a
-            href="mailto:crux@hackclub.com"
+            href="mailto:crux@horizons.hackclub.com"
             className="self-start whitespace-nowrap rounded-full px-6 py-3 text-[15px] font-semibold transition-transform hover:-translate-y-0.5"
             style={{
               background: "#FF7AE2",

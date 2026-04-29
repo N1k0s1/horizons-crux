@@ -5,49 +5,67 @@ import Image from "next/image";
 import { QUALIFY_STEPS, EVENT } from "@/lib/content";
 import { asset } from "@/lib/asset";
 
-const N           = QUALIFY_STEPS.length;     // 5 steps
-const STEP_W      = 320;                      // step block width
-const STEP_H      = 170;                      // step block height
-const ROW_H       = 280;                      // vertical distance between step starts
-const TRACK_W     = 880;                      // total zigzag track width
-const TRACK_H     = (N - 1) * ROW_H + STEP_H; // total zigzag track height
+const N           = QUALIFY_STEPS.length;
+const STEP_W      = 320;
+const STEP_H      = 170;
+const ROW_H       = 280;
+const TRACK_W     = 880;
+const TRACK_H     = (N - 1) * ROW_H + STEP_H;
 const JW          = 76;
 const JH          = 78;
-const SMOOTH      = 0.10;                     // lerp coefficient — lower = smoother/laggier
-const FADE_AT_END = 0.08;                     // fraction near segment ends where opacity dips
+const SMOOTH      = 0.10;
+const FADE_AT_END = 0.08;
 
 function stepBox(i: number) {
   const isLeft = i % 2 === 0;
-  return {
-    x: isLeft ? 0 : TRACK_W - STEP_W,
-    y: i * ROW_H,
-    isLeft,
-  };
+  return { x: isLeft ? 0 : TRACK_W - STEP_W, y: i * ROW_H, isLeft };
 }
 
 function stepNode(i: number) {
   const b = stepBox(i);
-  return {
-    x: b.isLeft ? b.x + STEP_W : b.x,
-    y: b.y + STEP_H / 2,
-  };
+  return { x: b.isLeft ? b.x + STEP_W : b.x, y: b.y + STEP_H / 2 };
 }
 
 export default function Qualify() {
-  const sectionRef = useRef<HTMLElement>(null);
-  const jfRef      = useRef<HTMLDivElement>(null);
-  const targetRef  = useRef({ x: 0, y: 0, opacity: 0 });
-  const currentRef = useRef({ x: 0, y: 0, opacity: 0 });
-  const rafRef     = useRef<number>(0);
+  const sectionRef      = useRef<HTMLElement>(null);
+  const containerRef    = useRef<HTMLDivElement>(null);
+  const zigzagRef       = useRef<HTMLDivElement>(null);
+  const jfRef           = useRef<HTMLDivElement>(null);
+  const mobileNodeRefs  = useRef<(HTMLDivElement | null)[]>([]);
+  const targetRef       = useRef({ x: 0, y: 0, opacity: 0 });
+  const currentRef      = useRef({ x: 0, y: 0, opacity: 0 });
+  const rafRef          = useRef<number>(0);
 
   useEffect(() => {
-    const section = sectionRef.current;
-    const jf      = jfRef.current;
+    const section   = sectionRef.current;
+    const jf        = jfRef.current;
     if (!section || !jf) return;
 
-    const start = stepNode(0);
-    currentRef.current = { x: start.x, y: start.y, opacity: 0 };
-    targetRef.current  = { x: start.x, y: start.y, opacity: 0 };
+    const getNodePositions = () => {
+      const container = containerRef.current;
+      if (!container) return null;
+      const cr = container.getBoundingClientRect();
+
+      if (window.innerWidth < 1024) {
+        // Mobile: read each node circle's screen position relative to container
+        return mobileNodeRefs.current.map(el => {
+          if (!el) return { x: 13, y: 13 };
+          const r = el.getBoundingClientRect();
+          return { x: r.left - cr.left + 13, y: r.top - cr.top + 13 };
+        });
+      } else {
+        // Desktop: offset zigzag coordinate system into container space
+        const zigzag = zigzagRef.current;
+        if (!zigzag) return null;
+        const zr = zigzag.getBoundingClientRect();
+        const ox = zr.left - cr.left;
+        const oy = zr.top  - cr.top;
+        return QUALIFY_STEPS.map((_, i) => {
+          const n = stepNode(i);
+          return { x: ox + n.x, y: oy + n.y };
+        });
+      }
+    };
 
     const updateTarget = () => {
       const rect     = section.getBoundingClientRect();
@@ -55,41 +73,33 @@ export default function Qualify() {
       const total    = Math.max(1, section.offsetHeight - window.innerHeight);
       const progress = Math.max(0, Math.min(1, scrolled / total));
 
-      // Map global progress → segment index + local t
       const sp     = progress * (N - 1);
       const segIdx = Math.min(Math.floor(sp), N - 2);
       const t      = sp - segIdx;
 
-      const a = stepNode(segIdx);
-      const b = stepNode(segIdx + 1);
+      const positions = getNodePositions();
+      if (!positions) return;
+
+      const a = positions[segIdx];
+      const b = positions[segIdx + 1];
       const x = a.x + (b.x - a.x) * t;
       const y = a.y + (b.y - a.y) * t;
 
-      // Hide jellyfish before section enters / after it leaves
-      const inView = rect.bottom > 0 && rect.top < window.innerHeight;
-
-      // Brief opacity dip at segment boundaries (the "fade transition between lines")
-      const edge = Math.min(t, 1 - t);
+      const inView  = rect.bottom > 0 && rect.top < window.innerHeight;
+      const edge    = Math.min(t, 1 - t);
       const segFade = edge < FADE_AT_END ? 0.25 + (edge / FADE_AT_END) * 0.75 : 1;
 
-      targetRef.current = {
-        x,
-        y,
-        opacity: inView ? segFade : 0,
-      };
+      targetRef.current = { x, y, opacity: inView ? segFade : 0 };
     };
 
     const tick = () => {
       const c = currentRef.current;
       const t = targetRef.current;
-
       c.x       += (t.x - c.x) * SMOOTH;
       c.y       += (t.y - c.y) * SMOOTH;
       c.opacity += (t.opacity - c.opacity) * 0.15;
-
       jf.style.transform = `translate(${c.x - JW / 2}px, ${c.y - JH / 2}px)`;
       jf.style.opacity   = c.opacity.toFixed(3);
-
       rafRef.current = requestAnimationFrame(tick);
     };
 
@@ -105,7 +115,6 @@ export default function Qualify() {
     };
   }, []);
 
-  // Pre-compute line endpoints (4 disconnected straight lines for 5 steps)
   const lines = Array.from({ length: N - 1 }, (_, i) => {
     const a = stepNode(i);
     const b = stepNode(i + 1);
@@ -122,7 +131,26 @@ export default function Qualify() {
           "radial-gradient(ellipse at 80% 0%, rgba(82,88,228,0.18) 0%, transparent 50%), #0D1117",
       }}
     >
-      <div className="mx-auto max-w-[1180px] px-7">
+      <div ref={containerRef} className="relative mx-auto max-w-[1180px] px-7">
+        {/* Jellyfish — absolute within container, tracks both mobile and desktop paths */}
+        <div
+          ref={jfRef}
+          className="pointer-events-none absolute left-0 top-0 z-10"
+          style={{ willChange: "transform, opacity" }}
+        >
+          <Image
+            src={asset("/art/jellyfish-yellow.png")}
+            alt=""
+            width={JW}
+            height={JH}
+            style={{
+              animation: "bob 4s ease-in-out infinite alternate",
+              display: "block",
+              filter: "drop-shadow(0 8px 24px rgba(255, 220, 120, 0.35))",
+            }}
+          />
+        </div>
+
         {/* ── Centered header ── */}
         <div className="mx-auto mb-[80px] max-w-[680px] text-center lg:mb-[100px]">
           <p
@@ -145,10 +173,10 @@ export default function Qualify() {
 
         {/* ── Desktop zigzag — fixed-pixel, mx-auto centered ── */}
         <div
+          ref={zigzagRef}
           className="relative mx-auto hidden lg:block"
           style={{ width: TRACK_W, height: TRACK_H }}
         >
-          {/* Disconnected dotted line segments + node markers */}
           <svg
             className="pointer-events-none absolute left-0 top-0"
             width={TRACK_W}
@@ -166,42 +194,18 @@ export default function Qualify() {
                 strokeLinecap="round"
               />
             ))}
-
             {QUALIFY_STEPS.map((_, i) => {
               const n = stepNode(i);
               return (
                 <g key={`node-${i}`}>
-                  {/* Glow halo */}
                   <circle cx={n.x} cy={n.y} r={16} fill="rgba(255,122,226,0.12)" />
-                  {/* Background-fill ring so dotted line terminates cleanly */}
-                  <circle cx={n.x} cy={n.y} r={9} fill="#0D1117" />
-                  {/* Pink dot */}
+                  <circle cx={n.x} cy={n.y} r={9}  fill="#0D1117" />
                   <circle cx={n.x} cy={n.y} r={5.5} fill="#FF7AE2" />
                 </g>
               );
             })}
           </svg>
 
-          {/* Jellyfish follower */}
-          <div
-            ref={jfRef}
-            className="pointer-events-none absolute left-0 top-0 z-10"
-            style={{ willChange: "transform, opacity" }}
-          >
-            <Image
-              src={asset("/art/jellyfish-yellow.png")}
-              alt=""
-              width={JW}
-              height={JH}
-              style={{
-                animation: "bob 4s ease-in-out infinite alternate",
-                display: "block",
-                filter: "drop-shadow(0 8px 24px rgba(255, 220, 120, 0.35))",
-              }}
-            />
-          </div>
-
-          {/* Step blocks — absolutely positioned, text aligned toward the path */}
           {QUALIFY_STEPS.map((step, i) => {
             const box = stepBox(i);
             return (
@@ -241,30 +245,60 @@ export default function Qualify() {
           })}
         </div>
 
-        {/* ── Mobile vertical list ── */}
-        <div className="mx-auto flex max-w-[480px] flex-col gap-9 lg:hidden">
-          {QUALIFY_STEPS.map((step, i) => (
-            <div key={step.number} className="relative pl-7">
-              <div
-                className="absolute left-0 top-0 flex h-7 w-7 items-center justify-center rounded-full"
-                style={{ background: "#FF7AE2", color: "#0D1117", fontWeight: 700, fontSize: 12 }}
-              >
-                {i + 1}
+        {/* ── Mobile: vertical list with dotted connector lines ── */}
+        <div className="relative mx-auto max-w-[480px] lg:hidden">
+          {/* Vertical dotted track */}
+          <div
+            className="absolute top-[13px] bottom-[13px]"
+            style={{
+              left: 12,
+              width: 2,
+              background:
+                "repeating-linear-gradient(to bottom, rgba(193,178,247,0.45) 0px, rgba(193,178,247,0.45) 3px, transparent 3px, transparent 13px)",
+            }}
+          />
+
+          <div className="flex flex-col gap-10">
+            {QUALIFY_STEPS.map((step, i) => (
+              <div key={step.number} className="relative pl-12">
+                {/* Node: glow halo + bg fill + pink dot */}
+                <div
+                  ref={el => { mobileNodeRefs.current[i] = el; }}
+                  className="absolute left-0 top-[1px]"
+                  style={{ width: 26, height: 26 }}
+                >
+                  <div
+                    className="absolute inset-0 rounded-full"
+                    style={{ background: "rgba(255,122,226,0.12)" }}
+                  />
+                  <div
+                    className="absolute inset-0 m-auto rounded-full"
+                    style={{ width: 18, height: 18, background: "#0D1117" }}
+                  />
+                  <div
+                    className="absolute inset-0 m-auto rounded-full"
+                    style={{ width: 11, height: 11, background: "#FF7AE2" }}
+                  />
+                </div>
+
+                <div
+                  className="font-serif mb-1 text-[12px] font-bold uppercase tracking-[0.14em]"
+                  style={{ color: "#FF7AE2" }}
+                >
+                  Step {step.number}
+                </div>
+                <h3
+                  className="font-serif mb-2 text-xl font-bold"
+                  style={{ letterSpacing: "-0.01em" }}
+                >
+                  {step.title}
+                </h3>
+                <p className="m-0 text-[15px] leading-relaxed" style={{ color: "#C1B3F7" }}>
+                  {step.description}
+                </p>
               </div>
-              <div
-                className="font-serif mb-1 text-[12px] font-bold uppercase tracking-[0.14em]"
-                style={{ color: "#FF7AE2" }}
-              >
-                Step {step.number}
-              </div>
-              <h3 className="font-serif mb-2 text-xl font-bold" style={{ letterSpacing: "-0.01em" }}>
-                {step.title}
-              </h3>
-              <p className="m-0 text-[15px] leading-relaxed" style={{ color: "#C1B3F7" }}>
-                {step.description}
-              </p>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>

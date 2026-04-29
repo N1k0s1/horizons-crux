@@ -73,7 +73,7 @@ export default function PastEvents() {
             gap: 20,
             paddingLeft: 56,
             paddingRight: 56,
-            height: "calc(100vh - 196px)",
+            height: "calc(100vh - 236px)",
             willChange: "transform",
           }}
         >
