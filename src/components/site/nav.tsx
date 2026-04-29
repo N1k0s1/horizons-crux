@@ -37,7 +37,7 @@ export default function Nav() {
           style={{ textDecoration: "none", borderBottom: "none" }}
         >
           <Image
-            src={asset("/art/logo.png")}
+            src={asset("/art/icon.png")}
             alt=""
             width={38}
             height={28}
