@@ -71,7 +71,7 @@ export default function Schedule() {
             width={400}
             height={400}
             className="pointer-events-none absolute -right-2 top-[26%] hidden h-auto w-[140px] -translate-y-1/2 select-none opacity-85 lg:block xl:-right-8 xl:w-[200px]"
-            style={{width: "350px", height: "auto", animation: "bob 6s ease-in-out infinite alternate 6s"}}
+            style={{width: "350px", height: "auto", animation: "bob 60s ease-in-out infinite alternate 60s"}}
           />
 
           {DAYS.map((day, i) => (
