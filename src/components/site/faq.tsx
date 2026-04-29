@@ -9,6 +9,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { FAQ_ITEMS, EVENT } from "@/lib/content";
+import Link from "next/link";
 
 export default function FAQ() {
   return (
@@ -90,6 +91,25 @@ export default function FAQ() {
             </AccordionItem>
           ))}
         </Accordion>
+
+        {/* CTA Button */}
+        <div className="mt-12 flex justify-center">
+          <a
+            href={EVENT.applyUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="shrink-0 rounded-full px-6 py-3 text-[15px] font-semibold transition-transform hover:-translate-y-0.5 active:scale-[0.98]"
+            style={{
+              background: "#FF7AE2",
+              color: "#0D1117",
+              textDecoration: "none",
+              borderBottom: "none",
+              boxShadow: "0 6px 20px rgba(255,122,226,0.25)",
+            }}
+          >
+            Start qualifying →
+          </a>
+        </div>
       </div>
     </section>
   );
