@@ -16,9 +16,7 @@ const STEPS = [
     title: "Find your people.",
     body: (
       <>
-        Along the way you can join our community, befriend other teenagers obsessed with what
-        they&apos;re making, learn from workshops, and take part in AMAs with published game
-        developers and engineers shipping at real studios.
+        Connect with likeminded individuals of all skill levels, and the same drive as you. Meet fellow peers, published developers, aspiring creators, let your passion guide you.
       </>
     ),
   },
