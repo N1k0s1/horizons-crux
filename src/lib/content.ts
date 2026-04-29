@@ -138,7 +138,7 @@ export const PAST_EVENTS = [
     name: "Undercity",
     tagline: "San Fransisco · July 2025",
     blurb:
-      "A hardware hackathon for high school builders. Solder, prototype, and ship real physical things under one roof with mentors who've shipped hardware for real.",
+      "A hardware hackathon for high school builders. Solder, prototype, and ship real physical projects under one roof with 150 other hardware hackers.",
     href: "https://undercity.hackclub.com",
   },
   {
