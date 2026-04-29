@@ -20,8 +20,8 @@ export default function Home() {
         <Qualify />
         <Schedule />
         <Covered />
-        <Sponsors />
         <FAQ />
+        <Sponsors />
       </main>
       <Footer />
     </>
