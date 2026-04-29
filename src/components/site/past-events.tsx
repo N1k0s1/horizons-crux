@@ -103,17 +103,6 @@ export default function PastEvents() {
                     backgroundRepeat: "no-repeat",
                   }}
                 >
-                  <span
-                    className="font-serif relative z-10 font-bold italic"
-                    style={{
-                      fontSize: "clamp(40px, 5vw, 64px)",
-                      color: "rgba(255,255,255,0.92)",
-                      letterSpacing: "-0.03em",
-                      textShadow: "0 4px 30px rgba(0,0,0,0.3)",
-                    }}
-                  >
-                    {event.name}
-                  </span>
                   <div
                     className="absolute inset-0"
                     style={{
