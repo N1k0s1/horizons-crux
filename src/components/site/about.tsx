@@ -7,7 +7,7 @@ const STEPS = [
     title: "Build amazing projects.",
     body: (
       <>
-        Spend <b style={{ color: "#B9FFFF", fontWeight: 600 }}>30 hours</b> on Hack Club building
+        Spend <b style={{ color: "#B9FFFF", fontWeight: 600 }}>35 hours</b> on Hack Club building
         whatever sets your brain on fire — a game, a website, a synth, a robot. The work is yours,
         the choice is yours, and every hour you log is one step closer to Sydney.
       </>
@@ -29,9 +29,9 @@ const STEPS = [
     title: "Fly out to Sydney.",
     body: (
       <>
-        Once you&apos;ve cleared <b style={{ color: "#B9FFFF", fontWeight: 600 }}>30 hours</b>,
-        you&apos;re in. We fly you out to Sydney, Australia for a fully-funded weekend under the
-        Southern Cross — meals, beds, transport, swag, all of it on us. Bring a laptop.
+        Once you&apos;ve cleared <b style={{ color: "#B9FFFF", fontWeight: 600 }}>35 hours</b>,
+        you&apos;re in. We fly you out to Sydney, Australia for a weekend under the
+        Southern Cross. Bring a laptop.
       </>
     ),
   },
