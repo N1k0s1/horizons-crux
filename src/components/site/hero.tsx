@@ -57,10 +57,6 @@ export default function Hero() {
           className="mb-[22px] flex items-center gap-[10px] text-[13px] uppercase tracking-[0.22em]"
           style={{ color: "#B9FFFF", fontFamily: "var(--font-sans)", fontWeight: 500, margin: "0 0 22px" }}
         >
-          <span
-            className="inline-block shrink-0"
-            style={{ width: 28, height: 1, background: "#B9FFFF" }}
-          />
           {EVENT.city} · Jul 10 – 12, {EVENT.year}
         </p>
 
