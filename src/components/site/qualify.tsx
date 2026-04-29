@@ -221,7 +221,45 @@ export default function Qualify() {
               alt=""
               width={240}
               height={240}
-              style={{ display: "block" }}
+              style={{ display: "block", height: "auto", width: "auto" }}
+            />
+          </div>
+
+          {/* light canoe opposite step 2 */}
+          <div
+            className="absolute z-0"
+            style={{
+              left: 0,
+              top: ROW_H,
+              width: 240,
+              height: 240,
+            }}
+          >
+            <Image
+              src={asset("/art/light-canoe-decal.png")}
+              alt=""
+              width={240}
+              height={240}
+              style={{ display: "block", height: "auto", width: "auto" }}
+            />
+          </div>
+
+          {/* light possum opposite step 3 */}
+          <div
+            className="absolute z-0"
+            style={{
+              right: 0,
+              top: 4 * ROW_H,
+              width: 240,
+              height: 240,
+            }}
+          >
+            <Image
+              src={asset("/art/light-possum-decal.png")}
+              alt=""
+              width={240}
+              height={240}
+              style={{ display: "block", height: "auto", width: "auto" }}
             />
           </div>
 
