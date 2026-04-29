@@ -57,7 +57,7 @@ export default function Schedule() {
               aria-hidden="true"
               width={400}
               height={400}
-              className="pointer-events-none absolute -right-2 bottom-1 hidden select-none lg:block"
+              className="pointer-events-none absolute -right-2 top-2 hidden select-none lg:block"
               style={{
                 zIndex: 0,
                 height: "auto",
