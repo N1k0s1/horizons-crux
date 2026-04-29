@@ -157,9 +157,7 @@ export default function Qualify() {
             className="mb-[14px] flex items-center justify-center gap-[10px] text-[12px] uppercase tracking-[0.22em]"
             style={{ color: "#B9FFFF", fontWeight: 500 }}
           >
-            <span className="inline-block shrink-0" style={{ width: 24, height: 1, background: "#B9FFFF" }} />
             How to qualify
-            <span className="inline-block shrink-0" style={{ width: 24, height: 1, background: "#B9FFFF" }} />
           </p>
           <h2 className="font-serif mb-5 text-4xl font-bold leading-[1.05] tracking-[-0.015em] lg:text-[clamp(34px,4.4vw,56px)]">
             Five steps to the Cross.

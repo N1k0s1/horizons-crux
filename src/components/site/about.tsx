@@ -65,7 +65,6 @@ export default function About() {
               className="mb-[14px] flex items-center gap-[10px] text-[12px] uppercase tracking-[0.22em]"
               style={{ color: "#B9FFFF", fontWeight: 500 }}
             >
-              <span className="inline-block shrink-0" style={{ width: 24, height: 1, background: "#B9FFFF" }} />
               About the event
             </p>
             <h2
@@ -75,7 +74,7 @@ export default function About() {
               A weekend in the deep end.
             </h2>
             <p className="text-lg leading-relaxed" style={{ color: "#C1B3F7" }}>
-              Three steps from your bedroom to the Southern Cross — Horizons Crux is a 3-day
+              Three steps from your bedroom to the Southern Cross. Horizons Crux is a 3-day
               hackathon in Sydney, fully funded by Hack Club, a 501(c)(3) nonprofit.
             </p>
           </div>

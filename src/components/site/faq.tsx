@@ -87,7 +87,6 @@ export default function FAQ() {
           className="mb-[14px] flex items-center gap-[10px] text-[12px] uppercase tracking-[0.22em]"
           style={{ color: "#B9FFFF", fontWeight: 500 }}
         >
-          <span className="inline-block shrink-0" style={{ width: 24, height: 1, background: "#B9FFFF" }} />
           Frequently asked
         </p>
         <h2

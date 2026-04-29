@@ -30,7 +30,7 @@ export const QUALIFY_STEPS = [
     number: "02",
     title: "Start Building",
     description:
-      "Create projects and upload them to Hack Club. Anything counts — web, games, hardware, art.",
+      "Create projects and upload them to Hack Club. Anything counts: web, games, hardware, art.",
     href: null,
   },
   {
