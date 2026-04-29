@@ -1,14 +1,15 @@
 "use client";
 
 import { useRef, useEffect } from "react";
+import { asset } from "@/lib/asset";
 import { PAST_EVENTS } from "@/lib/content";
 
-const CARD_STYLES: Record<string, { bg: string }> = {
-  Campfire:  { bg: "linear-gradient(135deg, #FF7AE2 0%, #FFB37A 60%, #FFE07A 100%)" },
-  Daydream:  { bg: "linear-gradient(135deg, #64B8FE 0%, #5258E4 50%, #6A33DA 100%)" },
-  Midnight:  { bg: "linear-gradient(135deg, #0D0D2B 0%, #1B1050 40%, #2B0F60 100%)" },
-  Stasis:    { bg: "linear-gradient(135deg, #00D2FF 0%, #0077B6 50%, #023E8A 100%)" },
-  Scrapyard: { bg: "linear-gradient(135deg, #F77F00 0%, #D62828 50%, #4A1942 100%)" },
+const CARD_STYLES: Record<string, { image: string }> = {
+  Campfire: { image: asset("/art/art-1.png") },
+  Daydream: { image: asset("/art/art-2.png") },
+  Midnight: { image: asset("/art/hero-bg.png") },
+  Undercity: { image: asset("https://undercity.hackclub.com/undercitylogo.svg") },
+  Scrapyard: { image: asset("/art/shark.png") },
 };
 
 export default function PastEvents() {
@@ -95,7 +96,12 @@ export default function PastEvents() {
                 {/* Gradient header */}
                 <div
                   className="relative flex flex-1 items-center justify-center overflow-hidden"
-                  style={{ background: cardStyle.bg }}
+                  style={{
+                    backgroundImage: `url(${cardStyle.image})`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                    backgroundRepeat: "no-repeat",
+                  }}
                 >
                   <span
                     className="font-serif relative z-10 font-bold italic"
