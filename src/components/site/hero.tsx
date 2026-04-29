@@ -48,8 +48,7 @@ export default function Hero() {
           width={360}
           height={120}
           priority
-          className="mb-[22px] h-auto w-[220px] lg:w-[360px]"
-          style={{ filter: "drop-shadow(0 12px 40px rgba(255,122,226,0.35))" }}
+          className="logo-glow mb-[22px] h-auto w-[220px] lg:w-[360px]"
         />
 
         {/* Eyebrow */}

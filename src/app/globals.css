@@ -153,3 +153,14 @@
   from { transform: translateX(0) rotate(-2deg); }
   to   { transform: translateX(-30px) rotate(2deg); }
 }
+
+/* Logo glow effect - desktop only */
+.logo-glow {
+  filter: none;
+}
+
+@media (min-width: 1024px) {
+  .logo-glow {
+    filter: drop-shadow(0 12px 40px rgba(255, 122, 226, 0.35));
+  }
+}
