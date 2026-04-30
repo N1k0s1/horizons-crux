@@ -4,19 +4,19 @@ import { asset } from "@/lib/asset";
 const STEPS = [
   {
     num: "01",
-    title: "Build amazing projects.",
+    title: "Sign up for Horizons.",
     body: (
       <>
-        Log <b style={{ color: "#B9FFFF", fontWeight: 600 }}>35 hours</b> in <a href="https://horizons.hackclub.com" target="_blank" rel="noopener noreferrer">Hack Club Horizons</a> building whatever you desire. A game, a website, a synth, a robot... every hour is another step closer towards the Horizons.
+        Join <a href="https://horizons.hackclub.com" target="_blank" rel="noopener noreferrer" style={{ color: "#B9FFFF", fontWeight: 600 }}>Hack Club Horizons</a> to start your journey towards Horizons Crux. Doesn't matter how much coding experience you have, just sign up and start building. It’s free and open to all high school students.
       </>
     ),
   },
   {
     num: "02",
-    title: "Find your people.",
+    title: "Build Cool Projects.",
     body: (
       <>
-        Connect with likeminded individuals of all skill levels, and the same drive as you. Meet fellow peers, published developers, aspiring creators, let your passion guide you.
+        Log <b style={{ color: "#B9FFFF", fontWeight: 600 }}>35 hours</b> in <a href="https://horizons.hackclub.com" target="_blank" rel="noopener noreferrer" style={{ color: "#B9FFFF", fontWeight: 600 }}>Hack Club Horizons</a> building whatever you desire. A game, a website, a synth, a robot... every hour is another step closer towards the Horizons.
       </>
     ),
   },
