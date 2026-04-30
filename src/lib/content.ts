@@ -157,7 +157,7 @@ export const FAQ_ITEMS = [
   },
   {
     q: "Who can attend?",
-    a: "High school students aged 13–18. You don't need to be from Australia — international attendees are welcome and we provide flight stipends.",
+    a: "High school students aged 13–18. You don't need to be from Australia, international attendees are welcome and we provide flight stipends.",
   },
   {
     q: "How do I qualify?",
@@ -177,7 +177,7 @@ export const FAQ_ITEMS = [
   },
   {
     q: "Do I need a visa to travel to Australia?",
-    a: "It depends on your nationality. Check the Australian Department of Home Affairs website for requirements and apply early — processing can take time. Contact us if you need help.",
+    a: "It depends on your nationality. Check the Australian Department of Home Affairs website for requirements and apply early, processing can take time. Contact us if you need help.",
   },
   {
     q: "Can my parents come?",
@@ -189,7 +189,7 @@ export const FAQ_ITEMS = [
   },
   {
     q: "How do I contact you?",
-    a: "Email crux@horizons.hackclub.com — we'll help with anything from visa questions to team formation.",
+    a: "Email crux@horizons.hackclub.com, we'll help with anything from visa questions to team formation.",
   },
 ] as const;
 
