@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, ReactNode } from "react";
 import Image from "next/image";
 import { QUALIFY_STEPS, EVENT } from "@/lib/content";
 import { asset } from "@/lib/asset";
@@ -363,7 +363,7 @@ export default function Qualify() {
 // Minimal inline Markdown renderer: supports links like [text](https://...)
 function MarkdownText({ text }: { text: string }) {
   if (!text) return null;
-  const parts: Array<string | JSX.Element> = [];
+  const parts: Array<string | ReactNode> = [];
   const linkRe = /\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g;
   let lastIndex = 0;
   let m: RegExpExecArray | null;
