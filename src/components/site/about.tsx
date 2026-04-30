@@ -7,7 +7,7 @@ const STEPS = [
     title: "Build amazing projects.",
     body: (
       <>
-        Log <b style={{ color: "#B9FFFF", fontWeight: 600 }}>35 hours</b> in Hack Club building whatever you desire. A game, a website, a synth, a robot... every hour is another step closer towards the Horizons.
+        Log <b style={{ color: "#B9FFFF", fontWeight: 600 }}>35 hours</b> in <a href="https://horizons.hackclub.com" target="_blank" rel="noopener noreferrer">Hack Club Horizons</a> building whatever you desire. A game, a website, a synth, a robot... every hour is another step closer towards the Horizons.
       </>
     ),
   },
