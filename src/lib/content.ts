@@ -49,9 +49,9 @@ export const QUALIFY_STEPS = [
   },
   {
     number: "05",
-    title: "Apply",
+    title: "Attend",
     description:
-      "Spend your hours for a ticket at horizons.hackclub.com before June 30, 2026.",
+      "Spend your hours for a ticket at horizons.hackclub.com before July 10, 2026. After that you are all set to attend!",
     href: "https://horizons.hackclub.com/crux",
   },
 ] as const;
