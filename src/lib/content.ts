@@ -12,7 +12,7 @@ export const EVENT = {
   hoursRequired: 35,
   email: "crux@horizons.hackclub.com",
   generalEmail: "horizons@hackclub.com",
-  applyUrl: "https://horizons.hackclub.com/utm_source=crux-site",
+  applyUrl: "https://horizons.hackclub.com/?utm_source=crux-site",
   applyDirectUrl: "https://horizons.hackclub.com/crux",
   qualifyDeadline: "June 30, 2026",
   qualifyPeriod: "Now through June 30, 2026",
@@ -23,8 +23,8 @@ export const QUALIFY_STEPS = [
     number: "01",
     title: "Join Hack Club",
     description:
-      "Visit [horizons.hackclub.com](https://horizons.hackclub.com/utm_source=crux-site) and create an account. It's free and open to all high school students.",
-    href: "https://horizons.hackclub.com/utm_source=crux-site ",
+      "Visit [horizons.hackclub.com](https://horizons.hackclub.com/?utm_source=crux-site) and create an account. It's free and open to all high school students.",
+    href: "https://horizons.hackclub.com/?utm_source=crux-site ",
   },
   {
     number: "02",
@@ -51,7 +51,7 @@ export const QUALIFY_STEPS = [
     number: "05",
     title: "Attend",
     description:
-      "Spend your hours for a ticket at [horizons.hackclub.com](https://horizons.hackclub.com/utm_source=crux-site) before July 10, 2026. After that you are all set to attend!",
+      "Spend your hours for a ticket at [horizons.hackclub.com](https://horizons.hackclub.com/?utm_source=crux-site) before July 10, 2026. After that you are all set to attend!",
     href: "https://horizons.hackclub.com/crux",
   },
 ] as const;
@@ -161,7 +161,7 @@ export const FAQ_ITEMS = [
   },
   {
     q: "How do I qualify?",
-    a: "Spend 35 hours building projects on [horizons.hackclub.com](https://horizons.hackclub.com/utm_source=crux-site) before June 30, 2026, then spend your hours to get a ticket to Horizons Crux. Your hours are tracked automatically with [Hackatime](https://hackatime.hackclub.com).",
+    a: "Spend 35 hours building projects on [horizons.hackclub.com](https://horizons.hackclub.com/?utm_source=crux-site) before June 30, 2026, then spend your hours to get a ticket to Horizons Crux. Your hours are tracked automatically with [Hackatime](https://hackatime.hackclub.com).",
   },
   {
     q: "Where do I sleep?",
