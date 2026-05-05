@@ -7,7 +7,7 @@ const STEPS = [
     title: "Sign up for Horizons.",
     body: (
       <>
-        Join <a href="https://horizons.hackclub.com" target="_blank" rel="noopener noreferrer" style={{ color: "#B9FFFF", fontWeight: 600 }}>Hack Club Horizons</a> to start your journey towards Horizons Crux. Doesn't matter how much coding experience you have, just sign up and start building. It’s free and open to all high school students.
+        Join <a href="https://horizons.hackclub.com/?utm_source=crux-site" target="_blank" rel="noopener noreferrer" style={{ color: "#B9FFFF", fontWeight: 600 }}>Hack Club Horizons</a> to start your journey towards Horizons Crux. Doesn't matter how much coding experience you have, just sign up and start building. It’s free and open to all high school students.
       </>
     ),
   },
@@ -16,7 +16,7 @@ const STEPS = [
     title: "Build Cool Projects.",
     body: (
       <>
-        Log <b style={{ color: "#B9FFFF", fontWeight: 600 }}>35 hours</b> in <a href="https://horizons.hackclub.com" target="_blank" rel="noopener noreferrer" style={{ color: "#B9FFFF", fontWeight: 600 }}>Hack Club Horizons</a> building whatever you desire. A game, a website, a synth, a robot... every hour is another step closer towards the Horizons.
+        Log <b style={{ color: "#B9FFFF", fontWeight: 600 }}>35 hours</b> in <a href="https://horizons.hackclub.com/?utm_source=crux-site" target="_blank" rel="noopener noreferrer" style={{ color: "#B9FFFF", fontWeight: 600 }}>Hack Club Horizons</a> building whatever you desire. A game, a website, a synth, a robot... every hour is another step closer towards the Horizons.
       </>
     ),
   },
