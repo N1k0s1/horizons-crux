@@ -78,10 +78,10 @@ export default function Footer() {
             </h5>
             <ul className="m-0 flex list-none flex-col gap-[10px] p-0">
               {[
-                { label: "hackclub.com", href: "https://hackclub.com" },
-                { label: "Horizons", href: "https://horizons.hackclub.com" },
-                { label: "Campfire", href: "https://campfire.hackclub.com" },
-                { label: "Daydream", href: "https://daydream.hackclub.com" },
+                { label: "Philosophy", href: "https://hackclub.com/philosophy" },
+                { label: "Team & Board", href: "https://hackclub.com/team" },
+                { label: "Donate", href: "https://hackclub.com/philanthropy/" },
+                { label: "Conduct", href: "https://hackclub.com/conduct" },
               ].map(({ label, href }) => (
                 <li key={href}>
                   <a
