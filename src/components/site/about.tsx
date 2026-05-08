@@ -1,3 +1,5 @@
+import Image from "next/image";
+import { asset } from "@/lib/asset";
 
 const SECTIONS = [
   {
@@ -94,35 +96,57 @@ export default function About() {
         className="relative py-[80px] lg:py-[120px]"
         style={{ background: "linear-gradient(180deg, #0D1117 0%, #0a0b0f 100%)" }}
       >
-        <div className="mx-auto max-w-[860px] px-6">
-          <ol className="m-0 list-none p-0">
-            {SECTIONS.map((section, i) => (
-              <li
-                key={section.title}
-                className="py-7 lg:py-10"
-                style={{
-                  borderTop: "1px solid rgba(193,178,247,0.18)",
-                  borderBottom:
-                    i === SECTIONS.length - 1
-                      ? "1px solid rgba(193,178,247,0.18)"
-                      : undefined,
-                }}
-              >
-                <h3
-                  className="font-serif mt-1 mb-3 text-2xl font-bold leading-[1.1] lg:text-3xl"
-                  style={{ letterSpacing: "-0.01em", color: "#fff" }}
+        <div className="relative mx-auto flex max-w-[1180px] gap-0 px-[22px] lg:items-start lg:px-7">
+          {/* Anchor chain — full-viewport sticky rail on desktop */}
+          <div className="pointer-events-none hidden lg:sticky lg:top-0 lg:flex lg:h-screen lg:w-[170px] lg:shrink-0 lg:items-center lg:justify-center">
+            <Image
+              src={asset("/art/anchor-chain.png")}
+              alt=""
+              width={549}
+              height={1537}
+              className="h-screen w-auto max-w-none object-contain object-top"
+              style={{
+                transformOrigin: "top center",
+                filter: "drop-shadow(0 12px 40px rgba(255,122,226,0.25))",
+                animation: "anchorSway 7s ease-in-out infinite alternate",
+              }}
+            />
+          </div>
+
+          {/* Right column — shifted toward the centerline */}
+          <div
+            className="relative flex-1 lg:pl-32 lg:pr-7"
+            style={{ zIndex: 2 }}
+          >
+            <ol className="m-0 list-none p-0">
+              {SECTIONS.map((section, i) => (
+                <li
+                  key={section.title}
+                  className="py-7 lg:py-10"
+                  style={{
+                    borderTop: "1px solid rgba(193,178,247,0.18)",
+                    borderBottom:
+                      i === SECTIONS.length - 1
+                        ? "1px solid rgba(193,178,247,0.18)"
+                        : undefined,
+                  }}
                 >
-                  {section.title}
-                </h3>
-                <p
-                  className="m-0 text-[18px] leading-[1.65]"
-                  style={{ color: "#C1B3F7" }}
-                >
-                  {section.body}
-                </p>
-              </li>
-            ))}
-          </ol>
+                  <h3
+                    className="font-serif mt-1 mb-3 text-2xl font-bold leading-[1.1] lg:text-3xl"
+                    style={{ letterSpacing: "-0.01em", color: "#fff" }}
+                  >
+                    {section.title}
+                  </h3>
+                  <p
+                    className="m-0 text-[18px] leading-[1.65]"
+                    style={{ color: "#C1B3F7", maxWidth: "60ch" }}
+                  >
+                    {section.body}
+                  </p>
+                </li>
+              ))}
+            </ol>
+          </div>
         </div>
       </section>
     </>
