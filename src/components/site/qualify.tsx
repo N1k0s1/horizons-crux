@@ -128,7 +128,7 @@ export default function Qualify() {
       className="relative py-[100px] lg:py-[140px]"
       style={{
         background:
-          "radial-gradient(ellipse at 80% 0%, rgba(82,88,228,0.18) 0%, transparent 50%), #0D1117",
+          "#0D1117",
       }}
     >
       <div ref={containerRef} className="relative mx-auto max-w-[1180px] px-7">

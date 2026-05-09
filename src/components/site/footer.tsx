@@ -144,8 +144,7 @@ export default function Footer() {
             color: "#8689C7",
           }}
         >
-          <span>© 2026 {HACKCLUB.name} — {HACKCLUB.nonprofit}</span>
-          <span>Made with brushy paint and salt air, in Sydney.</span>
+          <span>© 2026 {HACKCLUB.name}</span>
         </div>
       </div>
     </footer>
