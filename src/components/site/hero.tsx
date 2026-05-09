@@ -50,7 +50,7 @@ export default function Hero() {
           width={360}
           height={120}
           priority
-          className="logo-glow mb-[22px] h-auto w-[220px] lg:w-[360px]"
+          className="mb-[22px] h-auto w-[220px] lg:w-[360px]"
         />
 
         {/* Eyebrow */}
@@ -67,7 +67,7 @@ export default function Hero() {
         </p>
 
         <p className="max-w-100 mb-[22px]">
-          A Hack Club flagship hackathon, in Sydney Australia. Code for 35 hours
+          A Hack Club flagship hackathon, in Sydney, Australia. Code for 35 hours
           and come to Australia for 48 hours of learning, teamwork, and fun!
         </p>
 
@@ -82,7 +82,7 @@ export default function Hero() {
             color: "#0D1117",
             textDecoration: "none",
             borderBottom: "none",
-            boxShadow: "0 6px 20px rgba(255,122,226,0.25)",
+            boxShadow: "none",
           }}
         >
           Sign up! →

@@ -24,8 +24,8 @@ export default function Nav() {
 
   return (
     <header
-      className="relative z-50 border-b border-[rgba(193,178,247,0.12)]"
-      style={{ background: "rgba(19,17,28,0.75)", backdropFilter: "blur(16px) saturate(140%)", WebkitBackdropFilter: "blur(16px) saturate(140%)" }}
+      className="relative z-50 border-b border-[rgba(193,178,247,0.18)]"
+      style={{ background: "#0D1117" }}
     >
       <div className="relative mx-auto flex max-w-[1280px] items-center gap-6 px-7 py-[14px]">
 
@@ -55,10 +55,10 @@ export default function Nav() {
             <li key={id}>
               <button
                 onClick={() => scrollTo(id)}
-                className="cursor-pointer rounded-full border-none bg-transparent px-[14px] py-2 text-sm transition-colors"
+                className="cursor-pointer border-none bg-transparent px-[14px] py-2 text-sm transition-colors"
                 style={{ color: "#C1B3F7", fontFamily: "var(--font-sans)" }}
-                onMouseEnter={(e) => { e.currentTarget.style.color = "#fff"; e.currentTarget.style.background = "rgba(193,178,247,0.08)"; }}
-                onMouseLeave={(e) => { e.currentTarget.style.color = "#C1B3F7"; e.currentTarget.style.background = "transparent"; }}
+                onMouseEnter={(e) => { e.currentTarget.style.color = "#fff"; }}
+                onMouseLeave={(e) => { e.currentTarget.style.color = "#C1B3F7"; }}
               >
                 {label}
               </button>
@@ -77,7 +77,7 @@ export default function Nav() {
             color: "#0D1117",
             textDecoration: "none",
             borderBottom: "none",
-            boxShadow: "0 6px 20px rgba(255,122,226,0.25)",
+            boxShadow: "none",
           }}
         >
           Start qualifying
@@ -106,7 +106,7 @@ export default function Nav() {
       {open && (
         <div
           className="absolute inset-x-0 border-b border-[rgba(193,178,247,0.12)] px-5 pb-5 pt-3 md:hidden"
-          style={{ background: "rgba(19,17,28,0.96)", backdropFilter: "blur(16px)" }}
+          style={{ background: "#0D1117" }}
         >
           <ul className="m-0 flex list-none flex-col gap-1 p-0">
             {NAV_ITEMS.map(({ id, label }) => (
