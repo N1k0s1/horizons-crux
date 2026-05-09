@@ -11,10 +11,8 @@ const SECTIONS = [
           scratch with a group of strangers who quickly become friends.
         </p>
         <p className="m-0">
-          At Horizons Crux, you&apos;ll have around 36 hours to take an idea from
-          zero to shipped — then show the room what you made. No polished demos,
-          no slides. Just a thing that works (or hilariously doesn&apos;t) that
-          you built yourself.
+          At Horizons Crux, you&apos;ll have around 48 hours to make a project, then show the room what you made. No polished demos,
+          no slides. Just a thing that you built yourself.
         </p>
       </>
     ),
@@ -38,7 +36,7 @@ const SECTIONS = [
           .
         </p>
         <p className="m-0">
-          No experience cap — beginners who just shipped their first project are
+          No experience cap, beginners who just shipped their first project are
           just as welcome as seasoned coders. If you&apos;re in high school and
           you&apos;ve put in the hours, you&apos;re in.
         </p>
@@ -50,15 +48,14 @@ const SECTIONS = [
     body: (
       <>
         <p className="m-0 mb-3">
-          Your flights and accommodation are{" "}
+          Your food and accommodation are{" "}
           <b style={{ color: "#B9FFFF", fontWeight: 600 }}>fully covered</b>{" "}
           by Hack Club, a 501(c)(3) nonprofit.
         </p>
         <p className="m-0">
           You&apos;ll leave with a project you&apos;re proud of, a network of
           teenage builders from across the globe, and the experience of shipping
-          something real under pressure in one of the world&apos;s most
-          beautiful cities.
+          something real under the pressure of the clock.
         </p>
       </>
     ),
@@ -88,7 +85,7 @@ export default function About() {
                 borderRadius: "3px",
               }}
             >
-              free, fully-funded hackathon
+              free hackathon
             </mark>{" "}
             for high schoolers who are ready to{" "}
             <mark
