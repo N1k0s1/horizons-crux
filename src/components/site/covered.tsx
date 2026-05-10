@@ -81,7 +81,7 @@ export default function Covered() {
 
           {/* Right — emoji list */}
           <ul className="m-0 flex list-none flex-col gap-[14px] p-0">
-            {ITEMS.map(({ emoji, label, detail }) => (
+            {ITEMS.map(({ label, detail }) => (
               <li
                 key={label}
                 className="rounded-[20px] px-[22px] py-[18px]"

@@ -2,8 +2,6 @@ import Image from "next/image";
 import { HACKCLUB } from "@/lib/content";
 import { asset } from "@/lib/asset";
 
-const PLACEHOLDER_COUNT = 8;
-
 export default function Sponsors() {
   return (
     <section

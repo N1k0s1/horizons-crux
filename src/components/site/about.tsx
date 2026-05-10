@@ -7,7 +7,7 @@ const STEPS = [
     title: "Sign up for Horizons.",
     body: (
       <>
-        Join <a href="https://horizons.hackclub.com/?utm_source=crux-site" target="_blank" rel="noopener noreferrer" style={{ color: "#B9FFFF", fontWeight: 600 }}>Hack Club Horizons</a> to start your journey towards Horizons Crux. Doesn't matter how much coding experience you have, just sign up and start building. It’s free and open to all high school students.
+        Join <a href="https://horizons.hackclub.com/?utm_source=crux-site" target="_blank" rel="noopener noreferrer" style={{ color: "#B9FFFF", fontWeight: 600 }}>Hack Club Horizons</a> to start your journey towards Horizons Crux. Doesn&apos;t matter how much coding experience you have, just sign up and start building. It’s free and open to all high school students.
       </>
     ),
   },

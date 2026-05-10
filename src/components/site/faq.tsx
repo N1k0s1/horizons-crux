@@ -9,7 +9,6 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { FAQ_ITEMS, EVENT } from "@/lib/content";
-import Link from "next/link";
 import { ReactNode } from "react";
 
 function parseMarkdownLinks(text: string) {
