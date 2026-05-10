@@ -54,7 +54,7 @@ export default function Sponsors() {
           style={{
             border: "1px solid rgba(193,178,247,0.18)",
             background:
-              "radial-gradient(ellipse at 100% 100%, rgba(255,122,226,0.15) 0%, transparent 50%), rgba(30,30,92,0.4)",
+              "rgba(30,30,92,0.4)",
           }}
         >
           <div>
@@ -81,7 +81,7 @@ export default function Sponsors() {
               color: "#0D1117",
               textDecoration: "none",
               borderBottom: "none",
-              boxShadow: "0 6px 20px rgba(255,122,226,0.25)",
+              boxShadow: "none",
             }}
           >
             Become a sponsor →

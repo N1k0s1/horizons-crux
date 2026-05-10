@@ -149,7 +149,7 @@ export default function FAQ() {
               color: "#0D1117",
               textDecoration: "none",
               borderBottom: "none",
-              boxShadow: "0 6px 20px rgba(255,122,226,0.25)",
+              boxShadow: "none",
             }}
           >
             Get Started! →

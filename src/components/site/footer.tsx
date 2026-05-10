@@ -4,24 +4,11 @@ import { asset } from "@/lib/asset";
 
 export default function Footer() {
   return (
+    <>
     <footer
-      className="relative overflow-hidden pb-8 pt-20"
-      style={{
-        background: "#0D1117",
-        borderTop: "1px solid rgba(193,178,247,0.18)",
-      }}
+      className="pb-10 pt-24"
     >
-      {/* Jellyfish orange deco */}
-      <Image
-        src={asset("/art/jellyfish-orange.png")}
-        alt=""
-        width={70}
-        height={100}
-        className="pointer-events-none absolute right-10 top-10"
-        style={{ opacity: 0.7, zIndex: 1, animation: "bob 10s ease-in-out infinite alternate-reverse" }}
-      />
-
-      <div className="relative mx-auto max-w-[1180px] px-7" style={{ zIndex: 2 }}>
+      <div className="mx-auto max-w-[1180px] px-7">
         <div className="mb-14 grid gap-12 sm:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1fr]">
 
           {/* Brand */}
@@ -58,7 +45,7 @@ export default function Footer() {
                 <li key={href}>
                   <a
                     href={href}
-                    className="text-[15px] transition-colors hover:text-[#FF7AE2]"
+                    className="text-[15px] transition-colors hover:text-white"
                     style={{ color: "#C1B3F7", textDecoration: "none", borderBottom: "none" }}
                   >
                     {label}
@@ -88,7 +75,7 @@ export default function Footer() {
                     href={href}
                     target="_blank"
                     rel="noreferrer"
-                    className="text-[15px] transition-colors hover:text-[#FF7AE2]"
+                    className="text-[15px] transition-colors hover:text-white"
                     style={{ color: "#C1B3F7", textDecoration: "none", borderBottom: "none" }}
                   >
                     {label}
@@ -110,7 +97,7 @@ export default function Footer() {
               <li>
                 <a
                   href={`mailto:${EVENT.email}`}
-                  className="text-[15px] transition-colors hover:text-[#FF7AE2]"
+                  className="text-[15px] transition-colors hover:text-white"
                   style={{ color: "#C1B3F7", textDecoration: "none", borderBottom: "none" }}
                 >
                   {EVENT.email}
@@ -119,7 +106,7 @@ export default function Footer() {
               <li>
                 <a
                   href="#sponsors"
-                  className="text-[15px] transition-colors hover:text-[#FF7AE2]"
+                  className="text-[15px] transition-colors hover:text-white"
                   style={{ color: "#C1B3F7", textDecoration: "none", borderBottom: "none" }}
                 >
                   Sponsor us
@@ -129,18 +116,16 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Bottom bar */}
-        <div
-          className="flex flex-wrap items-center justify-between gap-5 pt-7 text-[13px]"
-          style={{
-            borderTop: "1px solid rgba(193,178,247,0.18)",
-            color: "#8689C7",
-          }}
-        >
-          <span>© 2026 {HACKCLUB.name} — {HACKCLUB.nonprofit}</span>
-          <span>Made with brushy paint and salt air, in Sydney.</span>
-        </div>
+        
       </div>
     </footer>
+      <Image
+        src={asset("/art/footer3.png")}
+        alt=""
+        width={1920}
+        height={1080}
+        className="w-full"
+      />
+    </>
   );
 }

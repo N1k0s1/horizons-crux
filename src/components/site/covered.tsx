@@ -20,7 +20,7 @@ const ITEMS = [
   {
     emoji: "",
     label: "Event swag",
-    detail: "Free Horizons Crux merch!",
+    detail: "Free Hoodies, Hats, PCB Lanyards, Everything you can think of.",
   },
 ];
 
