@@ -79,7 +79,7 @@ type LinkItem = {
   featured?: boolean;
 };
 
-const primaryLinks: LinkItem[] = [
+const primaryLinks = [
   {
     title: "Start qualifying on Horizons",
     eyebrow: `${EVENT.hoursRequired} hours of building gets you eligible`,
@@ -166,7 +166,7 @@ const primaryLinks: LinkItem[] = [
     href: `mailto:${EVENT.email}`,
     icon: Mail,
   },
-] as const;
+] satisfies readonly LinkItem[];
 
 function isExternal(href: string) {
   return href.startsWith("http") || href.startsWith("mailto:");
@@ -247,7 +247,11 @@ export default function LinksPage() {
                 key={label}
                 href={href}
                 target={href.startsWith("mailto:") ? undefined : "_blank"}
-                rel={href.startsWith("mailto:") ? undefined : "noreferrer"}
+                rel={
+                  href.startsWith("mailto:")
+                    ? undefined
+                    : "noopener noreferrer"
+                }
                 aria-label={label}
                 title={label}
                 className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[rgba(193,178,247,0.28)] bg-white/[0.08] text-white transition hover:-translate-y-0.5 hover:border-[#B9FFFF] hover:bg-[#B9FFFF] hover:text-[#0D1117]"
@@ -323,7 +327,11 @@ export default function LinksPage() {
                 key={`${href}-${index}`}
                 href={href}
                 target={href.startsWith("mailto:") ? undefined : "_blank"}
-                rel={href.startsWith("mailto:") ? undefined : "noreferrer"}
+                rel={
+                  href.startsWith("mailto:")
+                    ? undefined
+                    : "noopener noreferrer"
+                }
                 className={linkClass}
               >
                 {content}
