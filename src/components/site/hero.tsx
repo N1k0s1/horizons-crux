@@ -23,7 +23,8 @@ export default function Hero() {
       <div
         className="pointer-events-none absolute inset-0 -z-10"
         style={{
-          background: "radial-gradient(ellipse at 50% 30%, rgba(13,17,23,0.55) 0%, rgba(13,17,23,0) 55%)",
+          background:
+            "radial-gradient(ellipse at 50% 30%, rgba(13,17,23,0.55) 0%, rgba(13,17,23,0) 55%)",
         }}
       />
 
@@ -32,7 +33,8 @@ export default function Hero() {
         className="pointer-events-none absolute bottom-0 left-0 right-0 -z-10"
         style={{
           height: "40%",
-          background: "linear-gradient(180deg, rgba(13,17,23,0) 0%, rgba(13,17,23,0.35) 60%, #0D1117 100%)",
+          background:
+            "linear-gradient(180deg, rgba(13,17,23,0) 0%, rgba(13,17,23,0.35) 60%, #0D1117 100%)",
         }}
       />
 
@@ -48,15 +50,25 @@ export default function Hero() {
           width={360}
           height={120}
           priority
-          className="logo-glow mb-[22px] h-auto w-[220px] lg:w-[360px]"
+          className="mb-[22px] h-auto w-[220px] lg:w-[360px]"
         />
 
         {/* Eyebrow */}
         <p
           className="mb-[22px] flex items-center gap-[10px] text-[13px] uppercase tracking-[0.22em]"
-          style={{ color: "#B9FFFF", fontFamily: "var(--font-sans)", fontWeight: 500, margin: "0 0 22px" }}
+          style={{
+            color: "#B9FFFF",
+            fontFamily: "var(--font-sans)",
+            fontWeight: 500,
+            margin: "0 0 22px",
+          }}
         >
           {EVENT.city} · Jul 10 – 12, {EVENT.year}
+        </p>
+
+        <p className="max-w-100 mb-[22px]">
+          A Hack Club flagship hackathon, in Sydney, Australia. Code for 35 hours
+          and come to Australia for 48 hours of learning, teamwork, and fun!
         </p>
 
         {/* CTA — self-start prevents stretching to full width */}
@@ -70,7 +82,7 @@ export default function Hero() {
             color: "#0D1117",
             textDecoration: "none",
             borderBottom: "none",
-            boxShadow: "0 6px 20px rgba(255,122,226,0.25)",
+            boxShadow: "none",
           }}
         >
           Sign up! →

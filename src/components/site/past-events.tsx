@@ -84,7 +84,7 @@ export default function PastEvents() {
                 href={event.href}
                 target="_blank"
                 rel="noreferrer"
-                className="group flex shrink-0 flex-col overflow-hidden rounded-[20px] border border-[rgba(193,178,247,0.18)] transition-all hover:-translate-y-1 hover:border-[#FF7AE2] hover:shadow-[0_30px_60px_-20px_rgba(255,122,226,0.25)]"
+                className="group flex shrink-0 flex-col overflow-hidden rounded-[20px] border border-[rgba(193,178,247,0.18)] transition-all hover:-translate-y-1 hover:border-[#FF7AE2]"
                 style={{
                   width: "clamp(320px, 38vw, 500px)",
                   background: "#1c1a28",
